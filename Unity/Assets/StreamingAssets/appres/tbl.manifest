@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 3085114582
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: efd326b80d821d631e04764cb14b357e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/TBL/UnitSpine.txt
+- Assets/Resources/TBL/UnitAvatar.txt
+- Assets/Resources/TBL/VtuberQuest.txt
+Dependencies: []

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ee0689151e955e74a92ea8326bf16e08
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - TsangerYuYangT
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: dacbe70207bc2d946b9101ee5770a982, type: 3}
+  - {fileID: 12800000, guid: 8e198c8972d4e77409f53b1ba638abf9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

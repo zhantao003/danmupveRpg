@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 3194057350
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: tbl
+      Dependencies: {}
