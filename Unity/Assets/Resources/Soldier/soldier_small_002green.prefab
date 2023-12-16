@@ -1,0 +1,2374 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2698677553272528997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2698677553272528999}
+  - component: {fileID: 2698677553272528998}
+  m_Layer: 0
+  m_Name: Avatar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2698677553272528999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2698677553272528997}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7116413207845587410}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2698677553272528998
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2698677553272528997}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1529453467
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 2d76b9254b204d54eab17115db103d5e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &2698677554169842032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2698677554169842034}
+  - component: {fileID: 4978289862993933580}
+  m_Layer: 0
+  m_Name: soldier_small_002green
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2698677554169842034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2698677554169842032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7116413207845587410}
+  - {fileID: 7778309556536742360}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4978289862993933580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2698677554169842032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1e2eb763eef144697b3fe3ea7b2d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nUniqueIdx: 0
+  tranSelf: {fileID: 7116413207845587410}
+  emDeadType: 1
+  nSoliderIdx: 0
+  szUserUid: 
+  szSelfUid: 
+  tranFirePos: {fileID: 7116413207845587410}
+  pRenderer: {fileID: 2698677553272528998}
+  emAtkRange: 0
+  emUnitType: 0
+  emCurState: 1
+  emMoveDir: 0
+  emStayRange: 0
+  emMoveType: 0
+  emCamp: 0
+  pAnimeCtrl: {fileID: 7116413207845587409}
+  pMoveBaseTarget: {fileID: 0}
+  pMoveTarget: {fileID: 0}
+  pStayMapSlot: {fileID: 0}
+  pAtkTarget: {fileID: 0}
+  nCurSetRenderLayer: 0
+  bAtkAble: 0
+  bSkillAble: 0
+  fCheckCD: 0.3
+  pUnitData:
+    emUnitLev: 0
+    szPrefabName: soldier_small_002
+    nTBLID: 102
+    nDmgRange: 1
+    nAtkDmg: 8
+    nAtkBuildDmg: 0
+    nAtkCD: 0
+    nAlertRange: 7
+    nAtkRange: 4
+    nCurHP: 0
+    nMaxHP: 5
+    nAtkTime: 0
+    nAtkActiveTime: 0
+    nMoveSpeed: 30
+    nDashSpeed: 50
+    nDeadTime: 0
+    pOwner: {fileID: 0}
+    bCanAtkFly: 0
+    szBullet: Bullet001
+    nBuffID: 0
+    nSkillID: 0
+    nCampAddValue: 0
+    nlGold: 0
+    szName: 
+  pChgLayerEffect: []
+  pSkillEffect: {fileID: 0}
+  pSkillRender: {fileID: 0}
+  szSkillEffect: 
+  bBackDefend: 0
+  pRedCheckMask:
+    serializedVersion: 2
+    m_Bits: 1280
+  pBlueCheckMask:
+    serializedVersion: 2
+    m_Bits: 640
+  pRedHeroCheckMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  pBlueHeroCheckMask:
+    serializedVersion: 2
+    m_Bits: 512
+  bCheckTarget: 0
+  emPathType: 0
+  bFirstDash: 0
+  cMitigationInfos: []
+  pColUnit: {fileID: 3543257525331893143}
+  pHeatTarget: {fileID: 0}
+  bYuanCheng: 1
+  bStartCheck: 0
+  nCheckCount: 0
+  nMaxCheckCount: 1
+  nMaxCheckRange: 15
+  nCheckTargetDis: 5
+  vHitTargetSlot: {fileID: 0}
+  vJumpTarget: {x: 0, y: 0}
+  vAtkTarget: {fileID: 0}
+  curAtkAnimeDir: 0
+  vBulletLerp: {x: 0, y: 0.54, z: 0}
+  preDir: 0
+  pJumpTarget: {fileID: 0}
+--- !u!1 &7116413207845587408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7116413207845587410}
+  - component: {fileID: 7116413207845587409}
+  m_Layer: 0
+  m_Name: Root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7116413207845587410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116413207845587408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_Children:
+  - {fileID: 2698677553272528999}
+  m_Father: {fileID: 2698677554169842034}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7116413207845587409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116413207845587408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56bac77b4c2c6c34ea066fca58d481c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: 4e3a08a69b2fde24d91e129fb727c3e7, type: 3}
+    - {fileID: 21300000, guid: 5d49cf3967210d34586f2488bac1266e, type: 3}
+    - {fileID: 21300000, guid: f36f5561af5a0d94d96483e2f14bcb4f, type: 3}
+    - {fileID: 21300000, guid: c01bd217a12b2a74db188ca669cae473, type: 3}
+    - {fileID: 21300000, guid: b67c3d20298ae914d8ada6f35ab5cc2f, type: 3}
+    - {fileID: 21300000, guid: 10f349ccfbebf13419144643f61d821b, type: 3}
+    - {fileID: 21300000, guid: c156f4a08fc7b0d479b2cbbfa4f592c3, type: 3}
+    - {fileID: 21300000, guid: d412dd8f699c6e14d9374dc0f076155b, type: 3}
+    - {fileID: 21300000, guid: 2d76b9254b204d54eab17115db103d5e, type: 3}
+    - {fileID: 21300000, guid: 87fbef01875eab042b8fa76ea59ee0ca, type: 3}
+    - {fileID: 21300000, guid: a32182b1ea2612c4aa813a0130ef25b3, type: 3}
+    - {fileID: 21300000, guid: 6d5ed9d3eaea12b40a5696e4cfb85992, type: 3}
+    - {fileID: 21300000, guid: e37f90152d78d374b939e979cc701e4e, type: 3}
+    - {fileID: 21300000, guid: f2469f6fbfce6be49992f9ba93ef2c92, type: 3}
+    - {fileID: 21300000, guid: e767290f1489dcb49a2fe97597a8f36b, type: 3}
+    - {fileID: 21300000, guid: 3f6dbea0f65244344937015f64198314, type: 3}
+    - {fileID: 21300000, guid: 13980a84c23ccf1469c3650afb793249, type: 3}
+    - {fileID: 21300000, guid: f463408bbd57cf44d9901f6d223ad209, type: 3}
+    - {fileID: 21300000, guid: d89bd734647f98d4e80492d7d802e18d, type: 3}
+    - {fileID: 21300000, guid: 47c923bb58eb5dd45a39e73abce201ec, type: 3}
+    - {fileID: 21300000, guid: 77c3d14e317d57c42a5658e1e37ba410, type: 3}
+    - {fileID: 21300000, guid: 2e2867c9286203a4b98b089d92c64885, type: 3}
+    - {fileID: 21300000, guid: 5a4229bebab8a7842ba5484a7b1f9701, type: 3}
+    - {fileID: 21300000, guid: ce1bd801b79cabb41992828b7dfa7443, type: 3}
+    - {fileID: 21300000, guid: 40400c500f574c746a691aa1fc70f069, type: 3}
+    - {fileID: 21300000, guid: fa0d327883dae6a458595cb3eac6c06a, type: 3}
+    - {fileID: 21300000, guid: 1123b1c238b0cf84392c4f2304a05df5, type: 3}
+    - {fileID: 21300000, guid: 937d44652e96fc14ba4545d85ab46e4c, type: 3}
+    - {fileID: 21300000, guid: 42f5b9344572fe140bf24c901643b23d, type: 3}
+    - {fileID: 21300000, guid: 322700e766fa4fd42bc57cb36e680891, type: 3}
+    - {fileID: 21300000, guid: c843dd6ec39263541b4b8677ee79ece6, type: 3}
+    - {fileID: 21300000, guid: 7341bbb569941b2449bcc967677fd4a2, type: 3}
+    - {fileID: 21300000, guid: 93630032436d16d4092ff1f4c3a3402f, type: 3}
+    - {fileID: 21300000, guid: 0830bb1d9cfc7ab439b50e25636a4b31, type: 3}
+    - {fileID: 21300000, guid: fa28726d1f937554a825d23df4973c5b, type: 3}
+    - {fileID: 21300000, guid: 175ee91da483b3a4b9e33430c2f3975d, type: 3}
+    - {fileID: 21300000, guid: 9c58f261665a3b549af6def4fe894ab0, type: 3}
+    - {fileID: 21300000, guid: 30ee56f63a1757743ad1186eab662e7a, type: 3}
+    - {fileID: 21300000, guid: 153e54edab0bcb446acea9ab43650342, type: 3}
+    - {fileID: 21300000, guid: f3a2fd3ffa4a6cc40ba4b37e2df48db8, type: 3}
+    - {fileID: 21300000, guid: 613560657b7646a4cbd3ade3a08d6714, type: 3}
+    - {fileID: 21300000, guid: f065d00c2611b5b47b1a0517f0aeb5e1, type: 3}
+    - {fileID: 21300000, guid: 1ff941003509cd94f81f1e1502a2b359, type: 3}
+    - {fileID: 21300000, guid: 67a27a2869dd8224e82759adb1d27f63, type: 3}
+    - {fileID: 21300000, guid: 1a0a23289cdbf794b839cbef3e49d227, type: 3}
+    - {fileID: 21300000, guid: 90e5ab33c4fc3424abf0a22c937332f3, type: 3}
+    - {fileID: 21300000, guid: 9f0b0397249a4244aaaf4f4fe72c8599, type: 3}
+    - {fileID: 21300000, guid: e9b8dcceaa5e9bf4386e9f4a1e084070, type: 3}
+    - {fileID: 21300000, guid: cd072c7953d441b4f848c422e2071dcf, type: 3}
+    - {fileID: 21300000, guid: 200cc0d0e2a03c24eb8902daf319e39c, type: 3}
+    - {fileID: 21300000, guid: 00e4a13aa7b2aa94cb3212a64a3ebffc, type: 3}
+    - {fileID: 21300000, guid: c8e04b5c736fac748bfc834ba3ac05ea, type: 3}
+    - {fileID: 21300000, guid: af3f8bd3284200947bde42d7ce19beca, type: 3}
+    - {fileID: 21300000, guid: 0348e615e30105c41bb50a7fe7750332, type: 3}
+    - {fileID: 21300000, guid: 1272d4aaa3f33644999756fb20bcd501, type: 3}
+    - {fileID: 21300000, guid: f97744aec53af33438898b8ccfa5cee8, type: 3}
+    - {fileID: 21300000, guid: d2bdb7713236d1d419eb728be204177e, type: 3}
+    - {fileID: 21300000, guid: 79a98ffeaf1f78846b749d0924a4d64b, type: 3}
+    - {fileID: 21300000, guid: 7a284ff612141bf4d97ea14a3c5f2531, type: 3}
+    - {fileID: 21300000, guid: 2e696ab69713e954c8d5afba76df4d1a, type: 3}
+    - {fileID: 21300000, guid: 47548c86431ce674fb45e792df4db8fc, type: 3}
+    - {fileID: 21300000, guid: 738a0880327ad904b9481e1464c0d0c8, type: 3}
+    - {fileID: 21300000, guid: 6b54e86da84d8254292489510170fa8a, type: 3}
+    - {fileID: 21300000, guid: d5756a463a208be419392e5a30d1ee08, type: 3}
+    - {fileID: 21300000, guid: bb36a637430877a46bf16f4675d482c9, type: 3}
+    - {fileID: 21300000, guid: 0ae98a4a18a6f9549be1f28043822fc5, type: 3}
+    - {fileID: 21300000, guid: 850762a332dc1ec43ae6ddb3b7cbb6f8, type: 3}
+    - {fileID: 21300000, guid: 1cc7a342c31811b44bab2bef81b8e87a, type: 3}
+    - {fileID: 21300000, guid: 6f1d39a9bb374ee4ea4dec61e262fcf8, type: 3}
+    - {fileID: 21300000, guid: 501cacbde9cd8604b9a0f3c87f68fc22, type: 3}
+    - {fileID: 21300000, guid: bf3f752dc79ced74982af87042a7ec53, type: 3}
+    - {fileID: 21300000, guid: dcdeccfccc486eb4fb20b6eef0c514bf, type: 3}
+    - {fileID: 21300000, guid: fd1457f28000b4340a6cfe93dd9fca80, type: 3}
+    - {fileID: 21300000, guid: 0f0cd60387dcc774d87b820ccaa2983f, type: 3}
+    - {fileID: 21300000, guid: f2bab529c6a7d7b4389aeae31b029c1d, type: 3}
+    - {fileID: 21300000, guid: 513cfc6281037c549b6b82ec8b1d0784, type: 3}
+    - {fileID: 21300000, guid: 8f1648ede126dbd41bc5907d8a5cf8f0, type: 3}
+    - {fileID: 21300000, guid: b1bba47b09b6e6040ba118088be6bd7c, type: 3}
+    - {fileID: 21300000, guid: 15b84233b2d1a8c41bc56c7ef065b470, type: 3}
+    - {fileID: 21300000, guid: 70e657fb29aea1b43889a26191dff2b3, type: 3}
+    - {fileID: 21300000, guid: 48b25a0b84b8c2b49893e017734915bd, type: 3}
+    - {fileID: 21300000, guid: c615c77668f95f04f87c094ff3304156, type: 3}
+    - {fileID: 21300000, guid: d2c561b731784774c9d389493d89538f, type: 3}
+    - {fileID: 21300000, guid: a37cb167e861bb647bbe91690ce6e734, type: 3}
+    - {fileID: 21300000, guid: 684f17b171bd6b34e8b5b04543dcbb78, type: 3}
+    - {fileID: 21300000, guid: 6dd59b12f29806e47af19088eac6df12, type: 3}
+    - {fileID: 21300000, guid: 943e96419da29614daddaef45310d8f2, type: 3}
+    - {fileID: 21300000, guid: c9d7ef9f779b5014b96ee961e08632c7, type: 3}
+    - {fileID: 21300000, guid: 74d3aa1535042ae488431d85322eeab5, type: 3}
+    - {fileID: 21300000, guid: 5fac433c52137e74b8ab1e2671e40182, type: 3}
+    - {fileID: 21300000, guid: 57f8ee9a44838c74294fbb49aa7103fc, type: 3}
+    - {fileID: 21300000, guid: ab0afff9f787ffd4b8fa945c851c5f9a, type: 3}
+    - {fileID: 21300000, guid: 4f0e6816b4bc78b459972f156e603ca5, type: 3}
+    - {fileID: 21300000, guid: 24dc3159c501df14984962f0efdb52a9, type: 3}
+    - {fileID: 21300000, guid: 77559e1c6ea4f3a44af9869b2ff1e792, type: 3}
+    - {fileID: 21300000, guid: 79abacba89c585248ac76115fb7adf52, type: 3}
+    - {fileID: 21300000, guid: 9809dfd7b1a52624db0d3929bc42df66, type: 3}
+    - {fileID: 21300000, guid: c643d096a8d21f44e86150cb71e330d8, type: 3}
+    - {fileID: 21300000, guid: f6e62708bcc20a041920a70fb6feb2eb, type: 3}
+    - {fileID: 21300000, guid: a401508627174f3469345c2f218c9c00, type: 3}
+    - {fileID: 21300000, guid: 7a62651a22abc634094327a48da81db3, type: 3}
+    - {fileID: 21300000, guid: 4fc3ec1acfcbb6b4ab086f472172ae26, type: 3}
+    - {fileID: 21300000, guid: 304301992b9765c4ea30a7ea15b44b4c, type: 3}
+    - {fileID: 21300000, guid: f89b2165ddb099f4a88e8424e5c137de, type: 3}
+    - {fileID: 21300000, guid: 47979abfd79ad0f46b7eb6d34f86f954, type: 3}
+    - {fileID: 21300000, guid: 3bc2c19eecfeaa943a1f3fc71ce9a1d7, type: 3}
+    - {fileID: 21300000, guid: b999127a1788042478be301b4a67f800, type: 3}
+    - {fileID: 21300000, guid: e2ffc609540a5324c864953df06b8ae3, type: 3}
+    - {fileID: 21300000, guid: a8c93b4fadc64584b8271aefe479daf5, type: 3}
+    - {fileID: 21300000, guid: e0d872c49f0c5794a946e214e134b96f, type: 3}
+    - {fileID: 21300000, guid: cf661f26510804a4a93588192d260065, type: 3}
+    - {fileID: 21300000, guid: 68000a92b8ebcd143a0e14d7aff1471d, type: 3}
+    - {fileID: 21300000, guid: 71ca9f76700986846bc09c00adbddef0, type: 3}
+    - {fileID: 21300000, guid: 3c415888731724446945bd8a9e3c7f87, type: 3}
+    - {fileID: 21300000, guid: b7b4494379d40d44ebebff718cbae5ec, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: dicAnimeSlots
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[EMUnitAnimeState, Assembly-CSharp],[CUnitAnimeStateSlot,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[EMUnitAnimeState,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 2|CUnitAnimeStateSlot, Assembly-CSharp
+    - Name: emState
+      Entry: 3
+      Data: 0
+    - Name: dicDirSlots
+      Entry: 7
+      Data: 3|System.Collections.Generic.Dictionary`2[[EMUnitAnimeDir, Assembly-CSharp],[CUnitAnimeDirSlot,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 4|System.Collections.Generic.EnumEqualityComparer`1[[EMUnitAnimeDir,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 5|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 6|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: true
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 7|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 8|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 9|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 10|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: true
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 11|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 12|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 13|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 14|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 10
+      Data: 18
+    - Name: 
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 10
+      Data: 20
+    - Name: 
+      Entry: 10
+      Data: 21
+    - Name: 
+      Entry: 10
+      Data: 22
+    - Name: 
+      Entry: 10
+      Data: 23
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: true
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 15|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 16|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 10
+      Data: 18
+    - Name: 
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 10
+      Data: 20
+    - Name: 
+      Entry: 10
+      Data: 21
+    - Name: 
+      Entry: 10
+      Data: 22
+    - Name: 
+      Entry: 10
+      Data: 23
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 7
+      Data: 17|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 18|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 10
+      Data: 25
+    - Name: 
+      Entry: 10
+      Data: 26
+    - Name: 
+      Entry: 10
+      Data: 27
+    - Name: 
+      Entry: 10
+      Data: 28
+    - Name: 
+      Entry: 10
+      Data: 29
+    - Name: 
+      Entry: 10
+      Data: 30
+    - Name: 
+      Entry: 10
+      Data: 31
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
+    - Name: $v
+      Entry: 7
+      Data: 19|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 20|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 32
+    - Name: 
+      Entry: 10
+      Data: 33
+    - Name: 
+      Entry: 10
+      Data: 34
+    - Name: 
+      Entry: 10
+      Data: 35
+    - Name: 
+      Entry: 10
+      Data: 36
+    - Name: 
+      Entry: 10
+      Data: 37
+    - Name: 
+      Entry: 10
+      Data: 38
+    - Name: 
+      Entry: 10
+      Data: 39
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 21|CUnitAnimeStateSlot, Assembly-CSharp
+    - Name: emState
+      Entry: 3
+      Data: 1
+    - Name: dicDirSlots
+      Entry: 7
+      Data: 22|System.Collections.Generic.Dictionary`2[[EMUnitAnimeDir, Assembly-CSharp],[CUnitAnimeDirSlot,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 23|System.Collections.Generic.EnumEqualityComparer`1[[EMUnitAnimeDir,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 7
+      Data: 24|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 25|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 40
+    - Name: 
+      Entry: 10
+      Data: 41
+    - Name: 
+      Entry: 10
+      Data: 42
+    - Name: 
+      Entry: 10
+      Data: 43
+    - Name: 
+      Entry: 10
+      Data: 44
+    - Name: 
+      Entry: 10
+      Data: 45
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
+    - Name: $v
+      Entry: 7
+      Data: 26|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 27|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 46
+    - Name: 
+      Entry: 10
+      Data: 47
+    - Name: 
+      Entry: 10
+      Data: 48
+    - Name: 
+      Entry: 10
+      Data: 49
+    - Name: 
+      Entry: 10
+      Data: 50
+    - Name: 
+      Entry: 10
+      Data: 51
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 28|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 29|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 52
+    - Name: 
+      Entry: 10
+      Data: 53
+    - Name: 
+      Entry: 10
+      Data: 54
+    - Name: 
+      Entry: 10
+      Data: 55
+    - Name: 
+      Entry: 10
+      Data: 56
+    - Name: 
+      Entry: 10
+      Data: 57
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: true
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 30|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 31|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 52
+    - Name: 
+      Entry: 10
+      Data: 53
+    - Name: 
+      Entry: 10
+      Data: 54
+    - Name: 
+      Entry: 10
+      Data: 55
+    - Name: 
+      Entry: 10
+      Data: 56
+    - Name: 
+      Entry: 10
+      Data: 57
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 32|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 33|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 58
+    - Name: 
+      Entry: 10
+      Data: 59
+    - Name: 
+      Entry: 10
+      Data: 60
+    - Name: 
+      Entry: 10
+      Data: 61
+    - Name: 
+      Entry: 10
+      Data: 62
+    - Name: 
+      Entry: 10
+      Data: 63
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: true
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 34|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 35|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 58
+    - Name: 
+      Entry: 10
+      Data: 59
+    - Name: 
+      Entry: 10
+      Data: 60
+    - Name: 
+      Entry: 10
+      Data: 61
+    - Name: 
+      Entry: 10
+      Data: 62
+    - Name: 
+      Entry: 10
+      Data: 63
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 36|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 37|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 64
+    - Name: 
+      Entry: 10
+      Data: 65
+    - Name: 
+      Entry: 10
+      Data: 66
+    - Name: 
+      Entry: 10
+      Data: 67
+    - Name: 
+      Entry: 10
+      Data: 68
+    - Name: 
+      Entry: 10
+      Data: 69
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: true
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 38|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 39|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 64
+    - Name: 
+      Entry: 10
+      Data: 65
+    - Name: 
+      Entry: 10
+      Data: 66
+    - Name: 
+      Entry: 10
+      Data: 67
+    - Name: 
+      Entry: 10
+      Data: 68
+    - Name: 
+      Entry: 10
+      Data: 69
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: true
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 40|CUnitAnimeStateSlot, Assembly-CSharp
+    - Name: emState
+      Entry: 3
+      Data: 2
+    - Name: dicDirSlots
+      Entry: 7
+      Data: 41|System.Collections.Generic.Dictionary`2[[EMUnitAnimeDir, Assembly-CSharp],[CUnitAnimeDirSlot,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 42|System.Collections.Generic.EnumEqualityComparer`1[[EMUnitAnimeDir,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 43|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 44|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 70
+    - Name: 
+      Entry: 10
+      Data: 71
+    - Name: 
+      Entry: 10
+      Data: 72
+    - Name: 
+      Entry: 10
+      Data: 73
+    - Name: 
+      Entry: 10
+      Data: 74
+    - Name: 
+      Entry: 10
+      Data: 75
+    - Name: 
+      Entry: 10
+      Data: 76
+    - Name: 
+      Entry: 10
+      Data: 77
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: true
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 45|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 46|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 70
+    - Name: 
+      Entry: 10
+      Data: 71
+    - Name: 
+      Entry: 10
+      Data: 72
+    - Name: 
+      Entry: 10
+      Data: 73
+    - Name: 
+      Entry: 10
+      Data: 74
+    - Name: 
+      Entry: 10
+      Data: 75
+    - Name: 
+      Entry: 10
+      Data: 76
+    - Name: 
+      Entry: 10
+      Data: 77
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 47|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 48|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 78
+    - Name: 
+      Entry: 10
+      Data: 79
+    - Name: 
+      Entry: 10
+      Data: 80
+    - Name: 
+      Entry: 10
+      Data: 81
+    - Name: 
+      Entry: 10
+      Data: 82
+    - Name: 
+      Entry: 10
+      Data: 83
+    - Name: 
+      Entry: 10
+      Data: 84
+    - Name: 
+      Entry: 10
+      Data: 85
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: true
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 49|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 50|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 78
+    - Name: 
+      Entry: 10
+      Data: 79
+    - Name: 
+      Entry: 10
+      Data: 80
+    - Name: 
+      Entry: 10
+      Data: 81
+    - Name: 
+      Entry: 10
+      Data: 82
+    - Name: 
+      Entry: 10
+      Data: 83
+    - Name: 
+      Entry: 10
+      Data: 84
+    - Name: 
+      Entry: 10
+      Data: 85
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 51|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 52|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 86
+    - Name: 
+      Entry: 10
+      Data: 87
+    - Name: 
+      Entry: 10
+      Data: 88
+    - Name: 
+      Entry: 10
+      Data: 89
+    - Name: 
+      Entry: 10
+      Data: 90
+    - Name: 
+      Entry: 10
+      Data: 91
+    - Name: 
+      Entry: 10
+      Data: 92
+    - Name: 
+      Entry: 10
+      Data: 93
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: true
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 53|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 54|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 86
+    - Name: 
+      Entry: 10
+      Data: 87
+    - Name: 
+      Entry: 10
+      Data: 88
+    - Name: 
+      Entry: 10
+      Data: 89
+    - Name: 
+      Entry: 10
+      Data: 90
+    - Name: 
+      Entry: 10
+      Data: 91
+    - Name: 
+      Entry: 10
+      Data: 92
+    - Name: 
+      Entry: 10
+      Data: 93
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 7
+      Data: 55|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 56|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 94
+    - Name: 
+      Entry: 10
+      Data: 95
+    - Name: 
+      Entry: 10
+      Data: 96
+    - Name: 
+      Entry: 10
+      Data: 97
+    - Name: 
+      Entry: 10
+      Data: 98
+    - Name: 
+      Entry: 10
+      Data: 99
+    - Name: 
+      Entry: 10
+      Data: 100
+    - Name: 
+      Entry: 10
+      Data: 101
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
+    - Name: $v
+      Entry: 7
+      Data: 57|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 58|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 102
+    - Name: 
+      Entry: 10
+      Data: 103
+    - Name: 
+      Entry: 10
+      Data: 104
+    - Name: 
+      Entry: 10
+      Data: 105
+    - Name: 
+      Entry: 10
+      Data: 106
+    - Name: 
+      Entry: 10
+      Data: 107
+    - Name: 
+      Entry: 10
+      Data: 108
+    - Name: 
+      Entry: 10
+      Data: 109
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 59|CUnitAnimeStateSlot, Assembly-CSharp
+    - Name: emState
+      Entry: 3
+      Data: 3
+    - Name: dicDirSlots
+      Entry: 7
+      Data: 60|System.Collections.Generic.Dictionary`2[[EMUnitAnimeDir, Assembly-CSharp],[CUnitAnimeDirSlot,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 4
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 61|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 62|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 110
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: true
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 63|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 64|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 110
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 65|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 66|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 111
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: true
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 67|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 68|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 111
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 69|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 70|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 112
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: true
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 71|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 72|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 112
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 7
+      Data: 73|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 74|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 113
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
+    - Name: $v
+      Entry: 7
+      Data: 75|CUnitAnimeDirSlot, Assembly-CSharp
+    - Name: arrFrames
+      Entry: 7
+      Data: 76|UnityEngine.Sprite[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 114
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: bLoop
+      Entry: 5
+      Data: false
+    - Name: bRevert
+      Entry: 5
+      Data: false
+    - Name: fFrameTime
+      Entry: 4
+      Data: 0.08
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  pAvatar: {fileID: 2698677553272528998}
+  emCurState: 0
+  emCurDir: 0
+  fAddAnimaSpeed: 0
+  fAnimeTime: 0
+  bPlayAnime: 0
+  fFrameTime: 0
+  nCurFrame: 0
+  pCurStateSlot:
+    emState: 0
+  pCurDirSlot:
+    arrFrames: []
+    bLoop: 0
+    bRevert: 0
+    fFrameTime: 0.15
+  bTest: 0
+--- !u!1 &9145082078023886469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7778309556536742360}
+  - component: {fileID: 3543257525331893143}
+  - component: {fileID: 5307394338621873782}
+  - component: {fileID: 2254625138331127256}
+  m_Layer: 0
+  m_Name: ColBind
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7778309556536742360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145082078023886469}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2698677554169842034}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3543257525331893143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145082078023886469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86286e5b99009624b813a6c2df54f915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tranSelf: {fileID: 7778309556536742360}
+  pBindUnit: {fileID: 4978289862993933580}
+  pBEPUEntity: {fileID: 2254625138331127256}
+--- !u!58 &5307394338621873782
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145082078023886469}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2
+--- !u!114 &2254625138331127256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145082078023886469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72cf205fd5e446749bc66b847e1799da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pUnit: {fileID: 4978289862993933580}
+  fMass: 0
+  bIsStatic: 1
+  pCol: {fileID: 5307394338621873782}

@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3123562649251334629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3123562649251334626}
+  - component: {fileID: 2235029786503296120}
+  m_Layer: 0
+  m_Name: boom002
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3123562649251334626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3123562649251334629}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27.3, y: 19.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5792156022500503301}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2235029786503296120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3123562649251334629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f0228b03f4a4446a43b0d105ad6ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lGuid: 0
+  bAutoRecycle: 1
+  pLifeTicker:
+    m_float: 1
+    fCurParam: 0
+  pAudioPlay:
+    clip: {fileID: 0}
+    vClipRange: {x: 1, y: 8}
+    bLoop: 0
+    fVolum: 1
+    fPitch: 1
+    fBlend: 1
+  bPlaying: 0
+  bInited: 0
+  arrFrameEff:
+  - {fileID: 5792156022500503302}
+--- !u!1 &5792156022500503300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5792156022500503301}
+  - component: {fileID: 5792156022500503303}
+  - component: {fileID: 5792156022500503302}
+  m_Layer: 0
+  m_Name: Square
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5792156022500503301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5792156022500503300}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3123562649251334626}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &5792156022500503303
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5792156022500503300}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -908293471
+  m_SortingLayer: 4
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 0ccbdd0f00ae0004dbbd1b9e7f91caa2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &5792156022500503302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5792156022500503300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b421574377e054da815698a47ce985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pRender: {fileID: 5792156022500503303}
+  arrFrames:
+  - {fileID: 21300000, guid: 0ccbdd0f00ae0004dbbd1b9e7f91caa2, type: 3}
+  - {fileID: 21300000, guid: 0ccbdd0f00ae0004dbbd1b9e7f91caa2, type: 3}
+  - {fileID: 21300000, guid: 4457fa4dcf3be3d459b2d7927b510354, type: 3}
+  - {fileID: 21300000, guid: 286efe205ca86e14181c14d7a2667336, type: 3}
+  - {fileID: 21300000, guid: 155dc89376e471c44bee02baa45f0d4c, type: 3}
+  - {fileID: 21300000, guid: 35e29a603f26f4b4b947f6e45952b02d, type: 3}
+  - {fileID: 21300000, guid: 0a454b83c25b50746b8be44b0acfd34c, type: 3}
+  - {fileID: 21300000, guid: cf93f7dbd3f422844bd1f0c5639e521f, type: 3}
+  - {fileID: 21300000, guid: ec61538a3cf3c3d488e5281c713a5113, type: 3}
+  - {fileID: 21300000, guid: 5b62dafc5f260754c8498936a0fa5acb, type: 3}
+  - {fileID: 21300000, guid: 132b73eb81e59004c9b8a57c1d9e7c64, type: 3}
+  - {fileID: 21300000, guid: 6393850469bb79c40854ab789e0a6312, type: 3}
+  - {fileID: 21300000, guid: b874e3cb62d69c64688375c2ec9fbc7b, type: 3}
+  - {fileID: 21300000, guid: 176bf294fdb05e54d8c84c94bfb93165, type: 3}
+  - {fileID: 21300000, guid: 266db94bd3efaa64a9860c0efd4b3b4d, type: 3}
+  - {fileID: 21300000, guid: f95dfb9f1c6246a4c8fe00397149bfb4, type: 3}
+  - {fileID: 21300000, guid: cb7807b5f5b966e4b93cf8b043ac9da7, type: 3}
+  - {fileID: 21300000, guid: 4cc1913ca46a09447af861166985d336, type: 3}
+  - {fileID: 21300000, guid: ce21994b506e61842afd2b863cd19ec5, type: 3}
+  - {fileID: 21300000, guid: 814d1a77bfbd5c94fa0ce9ed8a7a7ca5, type: 3}
+  - {fileID: 21300000, guid: 193b66c42c9a6be4c89a9b631632ad7f, type: 3}
+  - {fileID: 21300000, guid: 5cabf7ccc5b0ee049b7fa8788a172e95, type: 3}
+  - {fileID: 21300000, guid: 53515f395f94d5547bc0ba20d6bb25ea, type: 3}
+  - {fileID: 21300000, guid: d833a85fa7b70cb47b35fe2f8e617cc5, type: 3}
+  - {fileID: 21300000, guid: e31de435560169548bfcc5da57201a1a, type: 3}
+  bLoop: 0
+  bRevert: 0
+  fPerFrameTime: 0.06
+  vScaleLerp: {x: 1.5, y: 1.5, z: 1}
+  fDelayTime: 0
+  fAnimeTime: 0
+  bPlayAnime: 0
+  fPlayTime: 0
+  nCurFrame: 0
+  fCurDelayTime: 0
+  bAutoPlay: 0

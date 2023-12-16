@@ -1,0 +1,221 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4103303335500126215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4103303335500126232}
+  - component: {fileID: 4103303335500126233}
+  - component: {fileID: 4103303335500126214}
+  m_Layer: 0
+  m_Name: ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4103303335500126232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4103303335500126215}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.4, z: 0}
+  m_LocalScale: {x: 2.6, y: 2.6, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4103303336503209091}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4103303335500126233
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4103303335500126215}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -908293471
+  m_SortingLayer: 4
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: de13e006135fc6e46b10fef6eb3971b7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 9.82, y: 6.962226}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &4103303335500126214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4103303335500126215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b421574377e054da815698a47ce985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pRender: {fileID: 4103303335500126233}
+  arrFrames:
+  - {fileID: 21300000, guid: de13e006135fc6e46b10fef6eb3971b7, type: 3}
+  - {fileID: 21300000, guid: 6b2734add67c85d4daec715c2d31614f, type: 3}
+  - {fileID: 21300000, guid: 7757941bf66cd4041bd7aacc9970b1fb, type: 3}
+  - {fileID: 21300000, guid: 7272d0f249f1de447a17bb78d5ed7755, type: 3}
+  - {fileID: 21300000, guid: 674953277feb62e4ea87c7190db38b55, type: 3}
+  - {fileID: 21300000, guid: 9501fdc5038f9a747a860961f1baa279, type: 3}
+  - {fileID: 21300000, guid: ac5daa8f6b23cf048b0da323f9cf0ba9, type: 3}
+  - {fileID: 21300000, guid: 76e546d34cb7ca649b311dc175ed15b1, type: 3}
+  - {fileID: 21300000, guid: 78c710e9f29eddd44b8dcc052191395e, type: 3}
+  - {fileID: 21300000, guid: 4355656e8bead6f4bb92fc85be8fb257, type: 3}
+  - {fileID: 21300000, guid: 816d663405ef37946b76c54c29485b95, type: 3}
+  - {fileID: 21300000, guid: 086d8a63c7137ce48afd0ed488db5953, type: 3}
+  - {fileID: 21300000, guid: a65271d565878c44988cdfd7d9872497, type: 3}
+  - {fileID: 21300000, guid: 51b272b64c65e384fa7751c2faf5935f, type: 3}
+  - {fileID: 21300000, guid: d7fa4637756824c4bb5a4fdf0d6f0b6d, type: 3}
+  - {fileID: 21300000, guid: f86e0620b98366b46ab748d9915013f2, type: 3}
+  - {fileID: 21300000, guid: bbffa199081284443867bc5cd9222814, type: 3}
+  - {fileID: 21300000, guid: fa48b8d1d4b669642901430a17396b5b, type: 3}
+  - {fileID: 21300000, guid: 4a1e17c7edd89f44bb25109111eef7a5, type: 3}
+  - {fileID: 21300000, guid: 2527cfba0d0b04843a3bb085f55076ef, type: 3}
+  - {fileID: 21300000, guid: 0c5c2e35222744346abf26814c8d8ee2, type: 3}
+  - {fileID: 21300000, guid: c8d3c475b2f7e154f9e3bf980d87d507, type: 3}
+  - {fileID: 21300000, guid: 33fbe333e823fea45b51c4ca769e0f1f, type: 3}
+  - {fileID: 21300000, guid: 5d35629991a7ca24686086b2356d1c1d, type: 3}
+  - {fileID: 21300000, guid: 45158a7ea3c69df4ea79167729bae3f9, type: 3}
+  - {fileID: 21300000, guid: 1ab2873b1981217409f6e0acd6c8483c, type: 3}
+  - {fileID: 21300000, guid: bed3bb61d8a6d1c42850b2f573e22a34, type: 3}
+  - {fileID: 21300000, guid: d65260b30c7c6354cb579634ab1c0bbb, type: 3}
+  - {fileID: 21300000, guid: d891dd0238907544f89da70b1a7ed867, type: 3}
+  - {fileID: 21300000, guid: 1579250a550d1d54a8667e3fec00c618, type: 3}
+  - {fileID: 21300000, guid: d5dcc733d247644429dcde71fd7c9e6d, type: 3}
+  - {fileID: 21300000, guid: 35b5b1c6e96103a4c949538f35c7f759, type: 3}
+  - {fileID: 21300000, guid: f258f0e3491be7f48ae4b9c949060b87, type: 3}
+  - {fileID: 21300000, guid: edec5509f12682d46913641cacea686f, type: 3}
+  - {fileID: 21300000, guid: 7e4892635fbd4c04b969562d1315c94f, type: 3}
+  - {fileID: 21300000, guid: 02ae5b975f32f2a4090208222c948a9b, type: 3}
+  - {fileID: 21300000, guid: 0e509462c98dd92418e07671755dcc95, type: 3}
+  - {fileID: 21300000, guid: b9306e27ad2d5f44290fc4da25e40108, type: 3}
+  - {fileID: 21300000, guid: b104e7c96321291408abe4d3e621b19e, type: 3}
+  - {fileID: 21300000, guid: b9246d6aa01740e4f8c02830eb27f9ac, type: 3}
+  - {fileID: 21300000, guid: 0a35c8682284694469a41a62fe60d543, type: 3}
+  - {fileID: 21300000, guid: c9e50759f47409b4b8aead2e6b3968f0, type: 3}
+  - {fileID: 21300000, guid: 8a2b9cdcbb1127b469255a16f5e60027, type: 3}
+  - {fileID: 21300000, guid: baadb92f2218d3343a03caa0c9d35263, type: 3}
+  - {fileID: 21300000, guid: e78405c155db70447b8c84149da53fe7, type: 3}
+  - {fileID: 21300000, guid: 3bc24d59f1df52a4ea1067cd5e405842, type: 3}
+  - {fileID: 21300000, guid: 507a381a30055fe498fb0ae8249f822f, type: 3}
+  - {fileID: 21300000, guid: e4fe1fd9f56359749aaa33db8cf9f2fc, type: 3}
+  - {fileID: 21300000, guid: 3f64241b7bb93844e9fcaeb226f2debd, type: 3}
+  - {fileID: 21300000, guid: 29442c70790f7e34896eaeddbf856208, type: 3}
+  bLoop: 0
+  bRevert: 0
+  fPerFrameTime: 0.03
+  vScaleLerp: {x: 2.6, y: 2.6, z: 1}
+  fDelayTime: 0
+  fAnimeTime: 0
+  bPlayAnime: 0
+  fPlayTime: 0
+  nCurFrame: 0
+  fCurDelayTime: 0
+  bAutoPlay: 0
+--- !u!1 &4103303336503209089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4103303336503209091}
+  - component: {fileID: 4103303336503209088}
+  m_Layer: 0
+  m_Name: effBuildBoom004
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4103303336503209091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4103303336503209089}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4103303335500126232}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4103303336503209088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4103303336503209089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f0228b03f4a4446a43b0d105ad6ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lGuid: 0
+  bAutoRecycle: 1
+  pLifeTicker:
+    m_float: 2
+    fCurParam: 0
+  pAudioPlay:
+    clip: {fileID: 8300000, guid: 036c6b9c38e7b2241882b3cb17fa5007, type: 3}
+    vClipRange: {x: 1, y: 8}
+    bLoop: 0
+    fVolum: 0.4
+    fPitch: 1
+    fBlend: 0
+  bPlaying: 0
+  bInited: 0
+  arrFrameEff:
+  - {fileID: 4103303335500126214}
+  arrTween: []

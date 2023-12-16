@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!612988286 &1
+SpriteAtlasAsset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_MasterAtlas: {fileID: 0}
+  m_ImporterData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 1
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 05cb726cdf06ef84c94469423903da92, type: 3}
+    - {fileID: 2800000, guid: a6dfa26e65ddb04489fe8b1d35f0e713, type: 3}
+    - {fileID: 2800000, guid: 40afd1d34f778e747ba8cfcf31743195, type: 3}
+    - {fileID: 2800000, guid: ae2cc0e0c537c604188e0e029387c55a, type: 3}
+    - {fileID: 2800000, guid: dfaa2debac7bbce4fb57e17d60c90d66, type: 3}
+    - {fileID: 2800000, guid: 455d34574557ea545861d684b39c15e4, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 1
+    cachedData: {fileID: 0}
+  m_IsVariant: 0
