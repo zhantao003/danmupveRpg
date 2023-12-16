@@ -1982,6 +1982,9 @@ public class AStarFindPath : CSingleMgrBase<AStarFindPath>
     /// <returns></returns>
     public MapSlot GetNextSlotByComputePath(CPlayerUnit moveUnit, MapSlot start, MapSlot end, List<MapSlot> listCheckPathRange = null)
     {
+        if (start == null ||
+            end == null)
+            return null;
         bool finded = false;
         MapSlot pNextSlot = null;
         List<MapSlot> ShortestPath = new List<MapSlot>();

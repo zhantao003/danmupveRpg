@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game101Net.unity
     guid: 99a842de686f43540b2cb1412ad00469
+  - enabled: 1
+    path: Assets/Scenes/MapSceneTest.unity
+    guid: 7dce36c7019441247b32b3597bcdab36
   m_configObjects: {}

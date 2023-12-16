@@ -236,49 +236,32 @@ public class FSMUnitRole_Move : FSMUnitBase
 
     void GetMoveTargetByHor()
     {
-        if(pUnit.bFirstDash)
-        {
-            if(!CBattleMgr.Ins.mapMgr.CheckDashRange(pUnit.pStayMapSlot.vecPos.x, pUnit.emCamp))
-            {
-                pUnit.bFirstDash = false;
-            }
-        }
 
+        pNextMove = AStarFindPath.Ins.GetNextSlotByComputePath(pUnit, pUnit.pStayMapSlot, pUnit.pMoveTarget); // pUnit.GetDirMoveTarget();
+
+        if (pNextMove != null)
+        {
+            //Debug.LogError(pUnit.pStayMapSlot.vecPos + "====" + pNextMove.vecPos);
+            AStarFindPath.Ins.GetNextMoveDir(ref pUnit.emMoveDir, pUnit.pStayMapSlot, pNextMove);
+            //计算移动所需要的时间
+            f64TotalMoveTime = CBattleMgr.Ins.SlotLerp / pUnit.pUnitData.MoveSpd;
+            //f64CurMoveTime = Fix64.Zero;
+
+            v64Start = pUnit.m_fixv3LogicPosition;
+            v64End = pNextMove.GetV64Pos();
+            v64Distance = v64End - v64Start;
+
+            pUnit.SetMapSlot(pNextMove);
+            pUnit.SetRenderLayer(pNextMove.nCurSetRenderLayer);
+            pUnit.PlayAnima(EMUnitAnimeState.Move, pUnit.emMoveDir);
+            bMoveOver = false;
+
+            //补偿一下多余的时间
+            RefreshPos(false);
+        }
         else
         {
-            pNextMove = AStarFindPath.Ins.GetNextSlotByComputePath(pUnit, pUnit.pStayMapSlot, pUnit.pMoveTarget); // pUnit.GetDirMoveTarget();
-            
-            if (pNextMove != null)
-            {
-                //Debug.LogError(pUnit.pStayMapSlot.vecPos + "====" + pNextMove.vecPos);
-                AStarFindPath.Ins.GetNextMoveDir(ref pUnit.emMoveDir, pUnit.pStayMapSlot, pNextMove);
-                //计算移动所需要的时间
-                if (pUnit.bFirstDash)
-                {
-                    f64TotalMoveTime = CBattleMgr.Ins.SlotLerp / pUnit.pUnitData.DashSpd;
-                }
-                else
-                {
-                    f64TotalMoveTime = CBattleMgr.Ins.SlotLerp / pUnit.pUnitData.MoveSpd;
-                }
-                //f64CurMoveTime = Fix64.Zero;
 
-                v64Start = pUnit.m_fixv3LogicPosition;
-                v64End = pNextMove.GetV64Pos();
-                v64Distance = v64End - v64Start;
-
-                pUnit.SetMapSlot(pNextMove);
-                pUnit.SetRenderLayer(pNextMove.nCurSetRenderLayer);
-                pUnit.PlayAnima(EMUnitAnimeState.Move, pUnit.emMoveDir);
-                bMoveOver = false;
-
-                //补偿一下多余的时间
-                RefreshPos(false);
-            }
-            else
-            {
-
-            }
         }
     }
 
