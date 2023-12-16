@@ -8,6 +8,13 @@ public enum CDanmuEventConst
     JoinQueue,
     ExitGame,
     Chi,
+    JoinLeft,
+    JoinRight,
+    UpPath,
+    CenterPath,
+    DownPath,
+
+    CreateSoldier, // 666³ö±ø
 
     Common_IdleUnitDialog = 1000,
 
@@ -19,6 +26,15 @@ public enum CDanmuGiftConst
 {
     None = 0,
     Common,
+
+    Soldier_Archer,
+    Soldier_BoxLv1,
+    Soldier_BoxLv2,
+    Hero,
+    Soldier_Lv1,
+    Soldier_Lv2,
+    Soldier_Lv3,
+
 
     Test = 2000,
 }

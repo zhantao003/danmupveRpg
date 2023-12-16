@@ -15,7 +15,7 @@ public class UINetWait : UIBase
     {
         if (pTickerOvertime.Tick(dt))
         {
-            UIToast.Show("ÍøÂç³¬Ê±");
+            UIToast.Show(CTBLLanguageInfo.Inst.GetContent(EMLanguageContentType.Game, "netouttime"));
 
             CDanmuSDKCenter.Ins.RepairNet(delegate ()
             {

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class CSingleMgrBase <T> where T:class
 {
@@ -56,6 +57,68 @@ public class CSingleCompBase<T> : MonoBehaviour where T : MonoBehaviour
                     //先寻找场景中现有的Object
                     ins = FindObjectOfType<T>();
                     if(ins!=null)
+                    {
+                        DontDestroyOnLoad(ins.gameObject);
+                    }
+                    else
+                    {
+                        GameObject newInsObj = new GameObject();
+                        ins = newInsObj.AddComponent<T>();
+                        newInsObj.name = $"[{typeof(T)}]";
+                        if (bIsGlobal && Application.isPlaying)
+                        {
+                            DontDestroyOnLoad(newInsObj);
+                        }
+                    }
+                }
+
+                return ins;
+            }
+        }
+    }
+
+    public void OnApplicationQuit()
+    {
+        bApplicationIsQuiting = true;
+    }
+}
+
+public class CSingleCompOdinBase<T> : SerializedMonoBehaviour where T : SerializedMonoBehaviour
+{
+    static T ins = null;
+
+    static readonly object objLock = new object();
+
+    protected static bool bApplicationIsQuiting { get; private set; }
+
+    protected static bool bIsGlobal = true;
+
+    static CSingleCompOdinBase()
+    {
+        bApplicationIsQuiting = false;
+    }
+
+    public static T Ins
+    {
+        get
+        {
+            if (bApplicationIsQuiting)
+            {
+                if (Debug.isDebugBuild)
+                {
+                    Debug.Log("[Singleton]" + typeof(T) + " already destroyed on application quit.");
+                }
+
+                return null;
+            }
+
+            lock (objLock)
+            {
+                if (ins == null)
+                {
+                    //先寻找场景中现有的Object
+                    ins = FindObjectOfType<T>();
+                    if (ins != null)
                     {
                         DontDestroyOnLoad(ins.gameObject);
                     }

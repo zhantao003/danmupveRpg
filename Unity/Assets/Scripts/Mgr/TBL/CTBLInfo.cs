@@ -66,10 +66,11 @@ public class CTBLInfo
                 }
             }
 
-
-
             CheckAllHandlers();
-
+            //foreach (string tbls in dicTBLAbsolutHandlers.Keys)
+            //{
+            //    LoadTBLAbsolutePath(tbls, dicTBLAbsolutHandlers[tbls].LoadInfo);
+            //}
             foreach (string tbls in dicTBLHandlers.Keys)
             {
                 Debug.Log("加载配表:" + tbls);
@@ -85,8 +86,14 @@ public class CTBLInfo
                 LoadTBLByBundle(pTBLBundle, tbls, dicTBLHandlers[tbls].LoadInfo);
 #endif
             }
-
+            CTBLLanguageInfo.Inst.LoadLanguageByBundle(pTBLBundle);
             Debug.LogWarning("TBL加载完成");
+
+            List<ST_UnitBattleInfo> listInfos = CTBLHandlerUnitBattleInfo.Ins.GetInfos();
+            for(int i = 0;i < listInfos.Count;i++)
+            {
+                listInfos[i].GetRealName();
+            }
 
             //// 释放掉AB
             //pTBLBundle.Unload(false);
@@ -140,7 +147,8 @@ public class CTBLInfo
 
             Debug.Log("配表：" + httAttri.tblName);
             dicTBLHandlers.Add(httAttri.tblName, iHandler);
-            dicTBLAbsolutHandlers.Add(Application.dataPath + "/Bundle/TBL/" + httAttri.tblFilePath + "/" + httAttri.tblName + ".txt", iHandler);
+            //dicTBLAbsolutHandlers.Add(Application.dataPath + "/Bundle/TBL/" + httAttri.tblFilePath + "/" + httAttri.tblName + ".txt", iHandler);
+            //dicTBLAbsolutHandlers.Add("Assets/Resources/TBL/" + httAttri.tblName + ".txt", iHandler);
         }
 
     }

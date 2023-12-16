@@ -503,6 +503,17 @@ namespace ETModel {
       }
     }
 
+    private long score_;
+    /// <summary>
+    ///排位分
+    /// </summary>
+    public long Score {
+      get { return score_; }
+      set {
+        score_ = value;
+      }
+    }
+
     public void WriteTo(pb::CodedOutputStream output) {
       if (Key != 0L) {
         output.WriteRawTag(8);
@@ -519,6 +530,10 @@ namespace ETModel {
       if (HeadIcon.Length != 0) {
         output.WriteRawTag(34);
         output.WriteString(HeadIcon);
+      }
+      if (Score != 0L) {
+        output.WriteRawTag(40);
+        output.WriteInt64(Score);
       }
       if (RpcId != 0) {
         output.WriteRawTag(208, 5);
@@ -543,6 +558,9 @@ namespace ETModel {
       if (HeadIcon.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(HeadIcon);
       }
+      if (Score != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Score);
+      }
       return size;
     }
 
@@ -551,6 +569,7 @@ namespace ETModel {
       platformID_ = "";
       nickName_ = "";
       headIcon_ = "";
+      score_ = 0;
       rpcId_ = 0;
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -572,6 +591,10 @@ namespace ETModel {
           }
           case 34: {
             HeadIcon = input.ReadString();
+            break;
+          }
+          case 40: {
+            Score = input.ReadInt64();
             break;
           }
           case 720: {
@@ -1900,16 +1923,31 @@ namespace ETModel {
       }
     }
 
-    private static readonly pb::FieldCodec<global::ETModel.DGameUnit> _repeated_units_codec
-        = pb::FieldCodec.ForMessage(10, global::ETModel.DGameUnit.Parser);
-    private pbc::RepeatedField<global::ETModel.DGameUnit> units_ = new pbc::RepeatedField<global::ETModel.DGameUnit>();
-    public pbc::RepeatedField<global::ETModel.DGameUnit> Units {
-      get { return units_; }
-      set { units_ = value; }
+    private int redCamp_;
+    public int RedCamp {
+      get { return redCamp_; }
+      set {
+        redCamp_ = value;
+      }
+    }
+
+    private int blueCamp_;
+    public int BlueCamp {
+      get { return blueCamp_; }
+      set {
+        blueCamp_ = value;
+      }
     }
 
     public void WriteTo(pb::CodedOutputStream output) {
-      units_.WriteTo(output, _repeated_units_codec);
+      if (RedCamp != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(RedCamp);
+      }
+      if (BlueCamp != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(BlueCamp);
+      }
       if (RpcId != 0) {
         output.WriteRawTag(208, 5);
         output.WriteInt32(RpcId);
@@ -1928,13 +1966,18 @@ namespace ETModel {
       if (ActorId != 0L) {
         size += 2 + pb::CodedOutputStream.ComputeInt64Size(ActorId);
       }
-      size += units_.CalculateSize(_repeated_units_codec);
+      if (RedCamp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RedCamp);
+      }
+      if (BlueCamp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BlueCamp);
+      }
       return size;
     }
 
     public void MergeFrom(pb::CodedInputStream input) {
-      for (int i = 0; i < units_.Count; i++) { MessagePool.Instance.Recycle(units_[i]); }
-      units_.Clear();
+      redCamp_ = 0;
+      blueCamp_ = 0;
       rpcId_ = 0;
       actorId_ = 0;
       uint tag;
@@ -1943,8 +1986,12 @@ namespace ETModel {
           default:
             input.SkipLastField();
             break;
-          case 10: {
-            units_.AddEntriesFrom(input, _repeated_units_codec);
+          case 8: {
+            RedCamp = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            BlueCamp = input.ReadInt32();
             break;
           }
           case 720: {

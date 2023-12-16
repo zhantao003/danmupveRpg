@@ -6,55 +6,59 @@ public class CLocalNetMsg
 {
     public bool bIsCorrectJson = false;
     protected string szMsgContent;
-    protected JSONClass m_pJsonData;
+    protected JSONObject m_pJsonData;
 
     public CLocalNetMsg()
     {
-        m_pJsonData = new JSONClass();
+        m_pJsonData = new JSONObject();
     }
 
     public CLocalNetMsg(string json)
     {
         szMsgContent = json;
-        m_pJsonData = new JSONClass();
+        m_pJsonData = new JSONObject();
         bIsCorrectJson = InitMsg(json);
     }
 
     public virtual void SetString(string key, string value)
     {
-        m_pJsonData.Add(key, new JSONData(value));
+        m_pJsonData.Add(key, new JSONString(value));
     }
 
     public virtual void SetInt(string key, int value)
     {
-        m_pJsonData.Add(key, new JSONData(value));
+        m_pJsonData.Add(key, new JSONNumber(value));
     }
 
     public virtual void SetFloat(string key, float value)
     {
-        m_pJsonData.Add(key, new JSONData(value));
+        m_pJsonData.Add(key, new JSONNumber(value));
     }
 
     public virtual void SetBool(string key, bool value)
     {
-        m_pJsonData.Add(key, new JSONData(value));
+        m_pJsonData.Add(key, new JSONBool(value));
+    }
+    public virtual void SetBoolAsInt(string key, bool value)
+    {
+        m_pJsonData.Add(key, value?1:0);
     }
 
     public virtual void SetLong(string key, long value)
     {
-        m_pJsonData.Add(key, new JSONData(value));
+        m_pJsonData.Add(key, new JSONNumber(value));
     }
 
     public virtual void SetDouble(string key, double value)
     {
-        m_pJsonData.Add(key, new JSONData(value));
+        m_pJsonData.Add(key, new JSONNumber(value));
     }
 
     public virtual void SetVector3(string key, Vector3 v3)
     {
-        m_pJsonData.Add(key + "x", new JSONData(v3.x));
-        m_pJsonData.Add(key + "y", new JSONData(v3.y));
-        m_pJsonData.Add(key + "z", new JSONData(v3.z));
+        m_pJsonData.Add(key + "x", new JSONNumber(v3.x));
+        m_pJsonData.Add(key + "y", new JSONNumber(v3.y));
+        m_pJsonData.Add(key + "z", new JSONNumber(v3.z));
     }
 
     public virtual void SetNetMsg(string key, CLocalNetMsg pSlot)
@@ -170,7 +174,7 @@ public class CLocalNetMsg
 
         try
         {
-            m_pJsonData = JSONNode.Parse(data) as JSONClass;
+            m_pJsonData = JSONNode.Parse(data) as JSONObject;
 
             if (m_pJsonData == null)
             {

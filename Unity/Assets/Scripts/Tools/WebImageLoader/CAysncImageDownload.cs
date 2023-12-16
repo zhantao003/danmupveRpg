@@ -94,13 +94,13 @@ public class CAysncImageDownload : CSingleCompBase<CAysncImageDownload>
 
         if (www.result == UnityWebRequest.Result.ConnectionError)
         {
-            Debug.Log(www.error);
+            //Debug.Log(www.error);
+            yield break;
         }
-
-        Texture2D texture = ((DownloadHandlerTexture)www.downloadHandler).texture;
 
         try
         {
+            Texture2D texture = ((DownloadHandlerTexture)www.downloadHandler).texture;
             CSaveImageInfo saveImageInfo = new CSaveImageInfo
             {
                 pngData = texture.EncodeToPNG(),
@@ -108,23 +108,24 @@ public class CAysncImageDownload : CSingleCompBase<CAysncImageDownload>
             };
 
             CAysncImageQueue.addSaveImageQueue(saveImageInfo);
+            texture.wrapMode = TextureWrapMode.Clamp;
+            texture.filterMode = FilterMode.Bilinear;
+
+            //Sprite m_sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
+
+            if (image != null)
+                image.texture = texture;
+
+            if (!spriteDic.ContainsKey(imageCacheFolderPath + url.GetHashCode()))
+            {
+                spriteDic.Add(imageCacheFolderPath + url.GetHashCode(), texture);
+            }
         }
         catch
         {
         }
 
-        texture.wrapMode = TextureWrapMode.Clamp;
-        texture.filterMode = FilterMode.Bilinear;
-
-        //Sprite m_sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
-
-        if(image!=null)
-            image.texture = texture;
-
-        if (!spriteDic.ContainsKey(imageCacheFolderPath + url.GetHashCode()))
-        {
-            spriteDic.Add(imageCacheFolderPath + url.GetHashCode(), texture);
-        }
+     
     }
 
     private IEnumerator loadLocalImage(string url, RawImage image)

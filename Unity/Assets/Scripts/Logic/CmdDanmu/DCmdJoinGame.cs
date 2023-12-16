@@ -10,19 +10,15 @@ public class DCmdJoinGame : CDanmuCmdAction
     {
         //if (CGameColorFishMgr.Ins.pMap == null) return;
 
-        Debug.Log("ÕÊº“£∫" + dm.nickName + " œÎº”»Î”Œœ∑");
+        Debug.Log("Áé©ÂÆ∂Ôºö" + dm.nickName + " ÊÉ≥Âä†ÂÖ•Ê∏∏Êàè");
 
         CPlayerBaseInfo pPlayerInfo = CPlayerMgr.Ins.GetPlayer(dm.uid.ToString());
         if (pPlayerInfo == null)
         {
-            //œ»µ«¬º
-            CPlayerNetHelper.Login(dm.uid, CDanmuSDKCenter.Ins.szRoomId, dm.nickName, dm.headIcon, CPlayerBaseInfo.EMUserType.Guanzhong,
-                                   dm.fanLv, dm.fanName, dm.fanEquip, dm.vipLv,
-                                   new HHandlerJoinGame(dm.nickName, dm.headIcon, 
-                                   "", null,
-                                   delegate(CPlayerBaseInfo value) {
-                                       //CGameColorPetMgr.Ins.JoinPlayer(value);
-                                   }));
+            //ÂÖàÁôªÂΩï
+            //CPlayerNetHelper.Login(dm.uid, CDanmuSDKCenter.Ins.szRoomId, dm.nickName, dm.headIcon/*,   CPlayerBaseInfo.EMUserType.Guanzhong
+            //                    ,  dm.fanLv, dm.fanName, dm.fanEquip, dm.vipLv*/ );
+                                  
         }
         else
         {

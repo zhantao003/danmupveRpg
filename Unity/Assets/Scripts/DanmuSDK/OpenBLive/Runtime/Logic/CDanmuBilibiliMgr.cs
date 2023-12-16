@@ -143,8 +143,8 @@ public class CDanmuBilibiliMgr : MonoBehaviour
 
             gameAnchorInfo = gameIdResObj.Data.AnchorInfo;
 
-            Debug.Log($"【直播间场次信息】 gameID：{gameIdResObj.Data.GameInfo.GameId}  房间id：{lRoomID}");
-            Debug.Log($"【直播间主播信息】 uid：{gameIdResObj.Data.AnchorInfo.Uid}  name：{gameIdResObj.Data.AnchorInfo.UName}  face：{gameIdResObj.Data.AnchorInfo.UFace}");
+            Debug.LogWarning($"【直播间场次信息】 gameID：{gameIdResObj.Data.GameInfo.GameId}  房间id：{lRoomID}");
+            Debug.LogWarning($"【直播间主播信息】 uid：{gameIdResObj.Data.AnchorInfo.Uid}  name：{gameIdResObj.Data.AnchorInfo.UName}  face：{gameIdResObj.Data.AnchorInfo.UFace}");
 
             //开启长连
             m_WebSocketBLiveClient = new WebSocketBLiveClient(gameIdResObj);
@@ -273,6 +273,8 @@ public class CDanmuBilibiliMgr : MonoBehaviour
 
     void OnWebsocketConnectErr()
     {
+        Debug.LogError("B站Websocket链接失败");
+
         EndGame(true);
 
         StartCoroutine(DoWssReconnect());
@@ -334,7 +336,7 @@ public class CDanmuBilibiliMgr : MonoBehaviour
 
         if (gameIdResObj.Code != 0)
         {
-            Debug.LogError("断线重连失败：" + gameIdResObj.Message);
+            Debug.LogError("断线重连失败：" + gameIdResObj.Message + "  Code:" + gameIdResObj.Code);
 
             //UIToast.Show("断线重连B站失败");
 

@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/Game101.unity
-    guid: d361f6c6569edec449f7bef8967096ae
   - enabled: 1
-    path: Assets/Scripts/DanmuSDK/TikTokYS/Demo/Scene/ExampleScene.unity
-    guid: 48251a5f1af846645910a9fe5515eb1d
+    path: Assets/Scenes/ModeSelect102.unity
+    guid: 726382e83583a604ab829c3730566cf9
+  - enabled: 1
+    path: Assets/Scenes/Game101.unity
+    guid: f1a3a01965f2c3447a6e9c6cedd79ad5
+  - enabled: 1
+    path: Assets/Scenes/Game101Net.unity
+    guid: 99a842de686f43540b2cb1412ad00469
   m_configObjects: {}

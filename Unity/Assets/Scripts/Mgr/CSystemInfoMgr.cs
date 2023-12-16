@@ -13,6 +13,7 @@ public class CSystemInfoConst
     public const string RESOLUTIONY = "resolutiony";    //分辨率Y
     public const string FPS = "fps";            //帧率
     public const string VUTBERCODE = "vcode";    //主播身份码
+    public const string MODELSELECT = "modelselect";        //模式选择
 }
 
 public class CSystemInfoMgr
@@ -49,7 +50,14 @@ public class CSystemInfoMgr
             {
                 CreatNewSystemFile();
             }
-
+            else
+            {
+                if (!CGlobalInit.Ins.isDouyinCloud)
+                {
+                    int nWeight = (int)((float)Screen.height / 16f * 9f);
+                    SetResolution(nWeight, Screen.height, false);
+                }
+            }
             Debug.LogWarning("SystemInfo 加载完成");
             
             m_bInited = true;
@@ -68,14 +76,28 @@ public class CSystemInfoMgr
         SaveAllSoundSet(100);
         SaveAudioSet(100);
         SaveBgmSet(100);
-
-        if(Application.platform == RuntimePlatform.WindowsEditor ||
+        SaveModelSelect(1);
+        if (Application.platform == RuntimePlatform.WindowsEditor ||
            Application.platform == RuntimePlatform.WindowsPlayer)
         {
-            //Resolution pCurResolution = Screen.resolutions[Screen.resolutions.Length - 1];
-            SetResolution(1600, 900, false);
+            if (CGlobalInit.Ins.isDouyinCloud)
+            {
+                SetResolution(CGlobalInit.Ins.nDouyinCloudScreenWidth,
+                              CGlobalInit.Ins.nDouyinCloudScreenHeight,
+                              CGlobalInit.Ins.nDouyinCloudFullScreen);
+            }
+            else
+            {
+                //Resolution pCurResolution = Screen.resolutions[Screen.resolutions.Length - 1];
+                //SetResolution(1080, 1920, false);
+                //SetResolution(720, 1080, false);
+                int nWeight = (int)((float)Screen.height / 16f * 9f);
+                SetResolution(nWeight, Screen.height, false);
+            }
         }
-
+        
+        
+        
         SetFPS(60);
 
         ///没找到该文件 创建一个新的该文件
@@ -101,6 +123,11 @@ public class CSystemInfoMgr
         string szRes = pSaveData.GetString(key);
 
         return szRes;
+    }
+
+    public void SaveModelSelect(int value)
+    {
+        pSaveData.SetInt(CSystemInfoConst.MODELSELECT, value);
     }
 
     /// <summary>
@@ -143,6 +170,11 @@ public class CSystemInfoMgr
     /// <param name="nY"></param>
     public void SetResolution(int nX,int nY, bool fullscreen = true)
     {
+        if(nY >= Screen.height)
+        {
+            nX = (int)((float)nY * 9f / 16f);
+        }
+
         pSaveData.SetBool(CSystemInfoConst.FULLSCREEN, fullscreen);
         pSaveData.SetInt(CSystemInfoConst.RESOLUTIONX, nX);
         pSaveData.SetInt(CSystemInfoConst.RESOLUTIONY, nY);
@@ -192,12 +224,23 @@ public class CSystemInfoMgr
             CAudioMgr.Ins.VolumMusic = (float)(pSaveData.GetInt(CSystemInfoConst.BGM)) * 0.01F;
 
             //设置屏幕相关信息
-            bool bFullScreen = pSaveData.GetBool(CSystemInfoConst.FULLSCREEN);
-            Screen.fullScreen = bFullScreen;
 
-            Screen.SetResolution(pSaveData.GetInt(CSystemInfoConst.RESOLUTIONX),
-                                 pSaveData.GetInt(CSystemInfoConst.RESOLUTIONY),
-                                 bFullScreen);
+            if(CGlobalInit.Ins.isDouyinCloud)
+            {
+                SetResolution(CGlobalInit.Ins.nDouyinCloudScreenWidth,
+                              CGlobalInit.Ins.nDouyinCloudScreenHeight,
+                              CGlobalInit.Ins.nDouyinCloudFullScreen);
+            }
+            else
+            {
+                bool bFullScreen = pSaveData.GetBool(CSystemInfoConst.FULLSCREEN);
+                Screen.fullScreen = bFullScreen;
+
+                Screen.SetResolution(pSaveData.GetInt(CSystemInfoConst.RESOLUTIONX),
+                                     pSaveData.GetInt(CSystemInfoConst.RESOLUTIONY),
+                                     bFullScreen);
+
+            }
 
             Application.targetFrameRate = pSaveData.GetInt(CSystemInfoConst.FPS);
 

@@ -13,6 +13,7 @@ public class CEncryptHelper
     private static string IV = "IOWknOOBjOWMheOC";
 
     public static string ASSETKEY = "ayb6jc8om43a9wce";
+    public static string SHA256KEY= "0xf07";
 
     public static string AesEncrypt(string str)
     {
@@ -123,5 +124,30 @@ public class CEncryptHelper
             sb.Append(buffer[i].ToString("x2"));
         }
         return sb.ToString();//result;
+    }
+
+    public static string SHA256Encrypt(string request)
+    {
+        using (var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(SHA256KEY)))
+        {
+            var hashBytes = hmac.ComputeHash(Encoding.UTF8.GetBytes(request));
+            return Convert.ToBase64String(hashBytes);
+        }
+    }
+
+    public static string MD5Encrypt(string input)
+    {
+        using (var md5 = MD5.Create())
+        {
+            var inputBytes = Encoding.UTF8.GetBytes(input);
+            var hashBytes = md5.ComputeHash(inputBytes);
+
+            var sb = new StringBuilder();
+            for (int i = 0; i < hashBytes.Length; i++)
+            {
+                sb.Append(hashBytes[i].ToString("x2"));
+            }
+            return sb.ToString();
+        }
     }
 }

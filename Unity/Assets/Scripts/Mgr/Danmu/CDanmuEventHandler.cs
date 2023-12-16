@@ -202,6 +202,27 @@ public class CDanmuEventHandler : SerializedMonoBehaviour
         {
             pCmd.DoAction(sendGift);
         }
+#if UNITY_EDITOR
+
+#else
+
+            //if (CDanmuSDKCenter.Ins.emPlatform == CDanmuSDKCenter.EMPlatform.DouyinOpen)
+            //{
+            //CPlayerNetHelper.RecordVtuberGift("battleAnt", Application.version, "douyin",
+            //    CDanmuSDKCenter.Ins.szRoomId, CDanmuSDKCenter.Ins.szNickName, sendGift.price);
+            //}
+            //else if(CDanmuSDKCenter.Ins.emPlatform == CDanmuSDKCenter.EMPlatform.Bilibili)
+            //{
+            //    CPlayerNetHelper.RecordVtuberGift("battleAnt", Application.version, "bilibili",
+            //        CDanmuSDKCenter.Ins.szRoomId, CDanmuSDKCenter.Ins.szNickName, sendGift.price);
+            //}
+            //else if (CDanmuSDKCenter.Ins.emPlatform == CDanmuSDKCenter.EMPlatform.YY)
+            //{
+            //    CPlayerNetHelper.RecordVtuberGift("battleAnt", Application.version, "yyopen",
+            //        CDanmuSDKCenter.Ins.szRoomId, CDanmuSDKCenter.Ins.szNickName, sendGift.price);
+            //}
+#endif
+
     }
 
     //µ¯Ä»ÏûÏ¢

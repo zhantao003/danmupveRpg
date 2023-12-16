@@ -11,24 +11,21 @@ namespace ETModel
         {
             if (ERoomInfoMgr.Ins.pSelfRoom == null) return;
 
+            //处理游戏开始逻辑
             RefreshUI();
-
+            
+            //刷新下时间
+            CLockStepData.g_uServerGameTime = 0;
+            CLockStepData.g_uGameLogicFrame = 0;
             await ETTask.CompletedTask;
         }
 
         void RefreshUI()
         {
-            UIETMain uiMain = GameObject.FindObjectOfType<UIETMain>();
-            if (uiMain == null) return;
+            UIManager.Instance.CloseUI(UIResType.Loading);
+            CBattleMgr.Ins.StartChouJiangUI();
 
-            uiMain.objBoardRoom.SetActive(false);
-
-            //������ҵ�λ
-            Vector3 vPos = new Vector3();
-            vPos.x = Random.Range(-5f, 5f);
-            vPos.z = Random.Range(-5f, 5f);
-            ERoom.RoomSlot pSelfslot = ERoomInfoMgr.Ins.pSelfRoom.GetSelfSlot();
-            EPlayerMgr.Ins.CreatePlayer(vPos, Quaternion.Euler(0,Random.Range(0,360),0), pSelfslot.player, true);
+            CLockStepMgr.Ins.Init(CLockStepMgr.EMType.Net);
         }
     }
 }

@@ -32,10 +32,10 @@ public static class ETHandlerReqGetRoomList
 
     static void RefreshUI()
     {
-        UIETMain uiMain = GameObject.FindObjectOfType<UIETMain>();
-        if (uiMain == null) return;
+        //UIETMain uiMain = GameObject.FindObjectOfType<UIETMain>();
+        //if (uiMain == null) return;
 
-        UIETBoardLogin uiETLogin = uiMain.objBoardLogin.GetComponent<UIETBoardLogin>();
-        uiETLogin.RefreshRoomList();
+        //UIETBoardLogin uiETLogin = uiMain.objBoardLogin.GetComponent<UIETBoardLogin>();
+        //uiETLogin.RefreshRoomList();
     }
 }

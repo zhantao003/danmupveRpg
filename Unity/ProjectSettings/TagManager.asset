@@ -12,10 +12,10 @@ TagManager:
   - Water
   - UI
   - Hidden
-  - 
-  - 
-  - 
-  - 
+  - Red
+  - Blue
+  - RedHero
+  - BlueHero
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 3229272293
+    locked: 0
+  - name: EffDown
+    uniqueID: 2108491909
+    locked: 0
+  - name: Units
+    uniqueID: 2765513829
+    locked: 0
+  - name: EffUp
+    uniqueID: 3386673825
     locked: 0

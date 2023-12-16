@@ -16,8 +16,96 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 638224358794063066
+  lastScan: 638244395973713327
   supportSerializedTypes:
+  - TypeName: UnityEngine.Animator, UnityEngine.AnimationModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.Color, UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[CDanmuGiftConst, Assembly-CSharp],[System.Collections.Generic.Dictionary`2[[System.Int32,
+      mscorlib],[UnityEngine.Sprite, UnityEngine.CoreModule]], mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[InfoInsertionType, Assembly-CSharp],[UnityEngine.GameObject,
+      UnityEngine.CoreModule]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[InfoInsertionType, Assembly-CSharp],[System.ValueTuple`2[[System.Single,
+      mscorlib],[System.Collections.Generic.Queue`1[[InsertionInfoBase, Assembly-CSharp]],
+      System]], mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[System.Collections.Generic.List`1[[UnityEngine.Animator,
+      UnityEngine.AnimationModule]], mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[UnityEngine.Sprite,
+      UnityEngine.CoreModule]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.Color,
+      UnityEngine.CoreModule]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Int32,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[CDanmuGiftConst,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.GameObject, UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.GenericEqualityComparer`1[[System.Int32,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[CDanmuGiftConst, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[System.Int32, mscorlib]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: InfoInsertionType, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: InsertionInfoBase, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Int32, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[UnityEngine.Animator, UnityEngine.AnimationModule]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Object, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Object[], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Queue`1[[InsertionInfoBase, Assembly-CSharp]],
+      System
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.ValueTuple`2[[System.Single, mscorlib],[System.Collections.Generic.Queue`1[[InsertionInfoBase,
+      Assembly-CSharp]], System]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Boolean, mscorlib
+    IsCustom: 0
+    Emit: 1
   - TypeName: CDanmuChatEventInfo, Assembly-CSharp
     IsCustom: 0
     Emit: 1
@@ -42,11 +130,25 @@ MonoBehaviour:
   - TypeName: CDanmuLikeAction, Assembly-CSharp
     IsCustom: 0
     Emit: 1
+  - TypeName: CUnitAnimeDirSlot, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: CUnitAnimeStateSlot, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
   - TypeName: System.Collections.Generic.Dictionary`2[[CDanmuEventConst, Assembly-CSharp],[CDanmuCmdAction,
       Assembly-CSharp]], mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: System.Collections.Generic.Dictionary`2[[CDanmuGiftConst, Assembly-CSharp],[CDanmuGiftAction,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[EMUnitAnimeDir, Assembly-CSharp],[CUnitAnimeDirSlot,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[EMUnitAnimeState, Assembly-CSharp],[CUnitAnimeStateSlot,
       Assembly-CSharp]], mscorlib
     IsCustom: 0
     Emit: 1
@@ -62,8 +164,25 @@ MonoBehaviour:
       Assembly-CSharp]], mscorlib
     IsCustom: 0
     Emit: 1
+  - TypeName: EMUnitAnimeDir, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: EMUnitAnimeState, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
   - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[CDanmuEventConst,
       Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[EMUnitAnimeDir,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[EMUnitAnimeState,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Single, mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: System.Collections.Generic.GenericEqualityComparer`1[[System.String,
@@ -74,8 +193,22 @@ MonoBehaviour:
       mscorlib
     IsCustom: 0
     Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[EMUnitAnimeDir, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[EMUnitAnimeState, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
   - TypeName: System.Collections.Generic.IEqualityComparer`1[[System.String, mscorlib]],
       mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.Sprite, UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.Sprite[], UnityEngine.CoreModule
     IsCustom: 0
     Emit: 1
   - TypeName: System.String, mscorlib

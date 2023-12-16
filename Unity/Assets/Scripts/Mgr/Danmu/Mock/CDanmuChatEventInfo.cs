@@ -11,6 +11,7 @@ public struct CDanmuChatEventInfo
     {
         Direct,     //直接匹配文字
         FollowNum,  //后接数字
+        Contain,    //包容
     }
 
     public CDanmuEventConst eventType;

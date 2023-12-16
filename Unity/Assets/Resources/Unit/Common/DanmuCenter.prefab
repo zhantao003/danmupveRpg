@@ -68,6 +68,91 @@ MonoBehaviour:
   listDM: []
   listGift: []
   listLike: []
+--- !u!1 &340928326243014406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 340928326243014407}
+  - component: {fileID: 340928326243014402}
+  - component: {fileID: 340928326243014405}
+  - component: {fileID: 340928326243014404}
+  m_Layer: 0
+  m_Name: YY
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &340928326243014407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340928326243014406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1548991150763875144}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &340928326243014402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340928326243014406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1c0a3d88ca07445aafb84feb8d2877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  URL_SERVER: https://fightbili.phantomrabbits.cn
+  WSS_SERVER: ws://fightbili.phantomrabbits.cn/ws
+  pStaticConfig: {fileID: 11400000, guid: 90aed369ab1999d438f4c06999c214f2, type: 2}
+  pEvent: {fileID: 340928326243014405}
+  szAccessToken: 
+  szUid: 
+  szNickname: 
+  szHeadIcon: 
+  szRoomID: 
+  szSerialCode: 
+  bListenTask: 1
+  bDebug: 0
+  bIsTest: 0
+--- !u!114 &340928326243014405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340928326243014406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32b0e72c2342794aa55e0aebf77e8d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &340928326243014404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340928326243014406}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a460e07cb80670e45a78b4528ca1bfbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  szRoomId: 66666
+  szUrl: http://127.0.0.1:12347
+  szWssUrl: ws://127.0.0.1:12347/ws
 --- !u!1 &1548991150763875150
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,6 +188,7 @@ Transform:
   - {fileID: 1548991151644890468}
   - {fileID: 1745610023}
   - {fileID: 2614496861768225559}
+  - {fileID: 340928326243014407}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -118,19 +204,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87273a5d08bdd7a4188d8ff51a6d1cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emPlatform: 4
+  emPlatform: 6
   arrPlatformMgr:
   - {fileID: 1548991151642537438}
   - {fileID: 1548991151588914584}
   - {fileID: 1548991151644890469}
   - {fileID: 0}
   - {fileID: 1745610022}
+  - {fileID: 0}
+  - {fileID: 340928326243014406}
   pEventHandler: {fileID: 1548991150763875147}
   szUid: 
   szRoomId: 
   szNickName: 
   szHeadIcon: 
-  bDevType: 1
+  bDevType: 0
 --- !u!114 &1548991150763875147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,19 +324,235 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 10
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 1
-      Data: test
+      Data: 7
     - Name: $v
       Entry: 7
       Data: CDanmuChatEventInfo, Assembly-CSharp
     - Name: eventType
       Entry: 3
-      Data: 2000
+      Data: 6
+    - Name: emType
+      Entry: 3
+      Data: 0
+    - Name: szInfo
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 9
+    - Name: $v
+      Entry: 7
+      Data: CDanmuChatEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 8
+    - Name: emType
+      Entry: 3
+      Data: 0
+    - Name: szInfo
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: CDanmuChatEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 4
+    - Name: emType
+      Entry: 3
+      Data: 0
+    - Name: szInfo
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 8
+    - Name: $v
+      Entry: 7
+      Data: CDanmuChatEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 7
+    - Name: emType
+      Entry: 3
+      Data: 0
+    - Name: szInfo
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: CDanmuChatEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 5
+    - Name: emType
+      Entry: 3
+      Data: 0
+    - Name: szInfo
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u5DE6"
+    - Name: $v
+      Entry: 7
+      Data: CDanmuChatEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 4
+    - Name: emType
+      Entry: 3
+      Data: 0
+    - Name: szInfo
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u53F3"
+    - Name: $v
+      Entry: 7
+      Data: CDanmuChatEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 5
+    - Name: emType
+      Entry: 3
+      Data: 0
+    - Name: szInfo
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u4E0A"
+    - Name: $v
+      Entry: 7
+      Data: CDanmuChatEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 6
+    - Name: emType
+      Entry: 3
+      Data: 0
+    - Name: szInfo
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u4E2D"
+    - Name: $v
+      Entry: 7
+      Data: CDanmuChatEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 7
+    - Name: emType
+      Entry: 3
+      Data: 0
+    - Name: szInfo
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u4E0B"
+    - Name: $v
+      Entry: 7
+      Data: CDanmuChatEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 8
     - Name: emType
       Entry: 3
       Data: 0
@@ -267,13 +571,17 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: dicFollowNumberChat
+    - Name: dicContainChat
       Entry: 7
       Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[CDanmuChatEventInfo,
         Assembly-CSharp]], mscorlib
     - Name: comparer
-      Entry: 9
-      Data: 1
+      Entry: 7
+      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 12
       Data: 1
@@ -282,16 +590,16 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: "\u5403"
+      Data: 6
     - Name: $v
       Entry: 7
       Data: CDanmuChatEventInfo, Assembly-CSharp
     - Name: eventType
       Entry: 3
-      Data: 3
+      Data: 9
     - Name: emType
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: szInfo
       Entry: 6
       Data: 
@@ -307,32 +615,358 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: dicGift
+    - Name: dicFollowNumberChat
       Entry: 7
-      Data: 3|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[CDanmuGiftEventInfo,
+      Data: 4|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[CDanmuChatEventInfo,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 4|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 5|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: dicGift
+      Entry: 7
+      Data: 6|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[CDanmuGiftEventInfo,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 7|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 18
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 1
-      Data: "\u5C0F\u82B1\u82B1"
+      Data: n1/Dg1905sj1FyoBlQBvmbaDZFBNaKuKZH6zxHkv8Lg5x2cRfrKUTb8gzMs=
     - Name: $v
       Entry: 7
       Data: CDanmuGiftEventInfo, Assembly-CSharp
     - Name: eventType
       Entry: 3
-      Data: 2000
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: fJs8HKQ0xlPRixn8JAUiL2gFRiLD9S6IFCFdvZODSnhyo9YN8q7xUuVVyZI=
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: PJ0FFeaDzXUreuUBZH6Hs+b56Jh0tQjrq0bIrrlZmv13GSAL9Q1hf59fjGk=
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: IkkadLfz7O/a5UR45p/OOCCG6ewAWVbsuzR/Z+v1v76CBU+mTG/wPjqdpfg=
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pGLo7HKNk1i4djkicmJXf6iWEyd+pfPBjbsHmd3WcX0Ierm2UdnRR7UINvI=
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: P7zDZzpeO215SpUptB+aURb1+zC14UC9MY1+MHszKoF0p5gzYk8CNEbey60=
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 7
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 8
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u9762\u5305"
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u767E\u5B9D\u7BB1"
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u9AD8\u5C04\u70AE"
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u5F13\u7BAD"
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u5F13\u7BAD\u5175"
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u60CA\u559C\u76F2\u76D2"
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u79CD\u65CF\u7CBE\u82F1"
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: "\u79CD\u65CF\u9996\u9886"
+    - Name: $v
+      Entry: 7
+      Data: CDanmuGiftEventInfo, Assembly-CSharp
+    - Name: eventType
+      Entry: 3
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -390,16 +1024,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d58dc5e61328f4180dc7454d6c83d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  URL_SERVER: http://127.0.0.1:12347
-  WSS_SERVER: ws://127.0.0.1:12347/ws
+  URL_SERVER: https://fightbili.phantomrabbits.cn
+  WSS_SERVER: ws://fightbili.phantomrabbits.cn/ws
   pStaticConfig: {fileID: 11400000, guid: 14bddede86df57940962d77d2e6b0944, type: 2}
   pEvent: {fileID: 3076240842508378385}
-  szToken: 
+  szAccessToken: 
+  szUid: 
+  szNickname: 
   szRoomID: 
-  bListen_LiveComment: 0
-  bListen_LiveGift: 0
-  bListen_LiveLike: 0
-  arrGiftList: []
+  bListen_LiveComment: 1
+  bListen_LiveGift: 1
+  bListen_LiveLike: 1
+  arrGiftList:
+  - n1/Dg1905sj1FyoBlQBvmbaDZFBNaKuKZH6zxHkv8Lg5x2cRfrKUTb8gzMs=
+  - fJs8HKQ0xlPRixn8JAUiL2gFRiLD9S6IFCFdvZODSnhyo9YN8q7xUuVVyZI=
+  - PJ0FFeaDzXUreuUBZH6Hs+b56Jh0tQjrq0bIrrlZmv13GSAL9Q1hf59fjGk=
+  - IkkadLfz7O/a5UR45p/OOCCG6ewAWVbsuzR/Z+v1v76CBU+mTG/wPjqdpfg=
+  - pGLo7HKNk1i4djkicmJXf6iWEyd+pfPBjbsHmd3WcX0Ierm2UdnRR7UINvI=
+  - P7zDZzpeO215SpUptB+aURb1+zC14UC9MY1+MHszKoF0p5gzYk8CNEbey60=
   bDebug: 0
 --- !u!114 &3076240842508378385
 MonoBehaviour:

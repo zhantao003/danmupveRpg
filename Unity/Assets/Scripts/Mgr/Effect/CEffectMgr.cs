@@ -353,6 +353,77 @@ public class CEffectMgr
            });
     }
 
+    public void CreateEffSyncNoPlay(string effName, Vector3 pos, Quaternion rot, int layer, DelegateGOFuncCall callOver = null)
+    {
+        //Debug.Log("Create Eff:" + effName);
+
+        CEffectBase pIdleEff = PopEff(effName);
+        if (pIdleEff != null)
+        {
+            GameObject objIdleEff = pIdleEff.gameObject;
+            objIdleEff.transform.SetParent(null);
+            objIdleEff.transform.position = pos;
+            objIdleEff.transform.localRotation = rot;
+            objIdleEff.transform.localScale = Vector3.one;
+
+            pIdleEff.Init(false);
+            pIdleEff.SetLayer(layer);
+
+            //Debug.Log("Create Eff:" + effName + "  Guid:" + pIdleEff.lGuid);
+
+            if (dicActiveEffect.ContainsKey(pIdleEff.lGuid))
+            {
+                Debug.LogError("Same Eff in Active:" + effName + "    Guid:" + pIdleEff.lGuid);
+            }
+
+            dicActiveEffect.Add(pIdleEff.lGuid, pIdleEff);
+
+            callOver?.Invoke(objIdleEff);
+            return;
+        }
+
+        CResLoadMgr.Inst.SynLoad(effName, CResLoadMgr.EM_ResLoadType.Effect, delegate (Object pRes, object data, bool bSuc)
+        {
+            GameObject objEffectRoot = pRes as GameObject;
+
+            //初始化失败
+            if (objEffectRoot == null)
+            {
+                Debug.LogError("初始化特效失败----" + effName);
+                return;
+            }
+
+            GameObject objNewEffect = GameObject.Instantiate(objEffectRoot) as GameObject;
+            objNewEffect.transform.SetParent(null);
+            objNewEffect.transform.position = pos;
+            objNewEffect.transform.localRotation = rot;
+            objNewEffect.transform.localScale = Vector3.one;
+            objNewEffect.gameObject.name = effName;
+
+            CEffectBase pNewEffect = objNewEffect.GetComponent<CEffectBase>();
+            if (pNewEffect == null)
+            {
+                Debug.LogError("None Eff Component");
+                GameObject.Destroy(objNewEffect);
+                return;
+            }
+
+            pNewEffect.Init(false);
+            pNewEffect.SetLayer(layer);
+
+            //Debug.Log("Create Eff:" + effName + "  Guid:" + pNewEffect.lGuid);
+
+            if (dicActiveEffect.ContainsKey(pNewEffect.lGuid))
+            {
+                Debug.LogError("Same Eff in Active:" + effName + "    Guid:" + pNewEffect.lGuid);
+            }
+
+            dicActiveEffect.Add(pNewEffect.lGuid, pNewEffect);
+
+            callOver?.Invoke(objNewEffect);
+        });
+    }
+
     CEffectBase PopEff(string effName)
     {
         CEffectBase pRes = null;

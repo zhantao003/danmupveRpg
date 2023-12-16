@@ -186,6 +186,17 @@ namespace ETModel {
       }
     }
 
+    private long score_;
+    /// <summary>
+    /// 排位分
+    /// </summary>
+    public long Score {
+      get { return score_; }
+      set {
+        score_ = value;
+      }
+    }
+
     public void WriteTo(pb::CodedOutputStream output) {
       if (PlayerId != 0L) {
         output.WriteRawTag(8);
@@ -251,6 +262,10 @@ namespace ETModel {
         output.WriteRawTag(130, 1);
         output.WriteString(CurRole);
       }
+      if (Score != 0L) {
+        output.WriteRawTag(136, 1);
+        output.WriteInt64(Score);
+      }
     }
 
     public int CalculateSize() {
@@ -303,6 +318,9 @@ namespace ETModel {
       if (CurRole.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(CurRole);
       }
+      if (Score != 0L) {
+        size += 2 + pb::CodedOutputStream.ComputeInt64Size(Score);
+      }
       return size;
     }
 
@@ -323,6 +341,7 @@ namespace ETModel {
       head_ = "";
       headBoard_ = "";
       curRole_ = "";
+      score_ = 0;
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -391,6 +410,10 @@ namespace ETModel {
           }
           case 130: {
             CurRole = input.ReadString();
+            break;
+          }
+          case 136: {
+            Score = input.ReadInt64();
             break;
           }
         }
@@ -654,6 +677,169 @@ namespace ETModel {
 
   }
 
+  /// <summary>
+  /// 缩略信息
+  /// </summary>
+  public partial class DUserListInfo : pb::IMessage {
+    private static readonly pb::MessageParser<DUserListInfo> _parser = new pb::MessageParser<DUserListInfo>(() => (DUserListInfo)MessagePool.Instance.Fetch(typeof(DUserListInfo)));
+    public static pb::MessageParser<DUserListInfo> Parser { get { return _parser; } }
+
+    private long playerId_;
+    public long PlayerId {
+      get { return playerId_; }
+      set {
+        playerId_ = value;
+      }
+    }
+
+    private string platformId_ = "";
+    /// <summary>
+    /// 平台ID
+    /// </summary>
+    public string PlatformId {
+      get { return platformId_; }
+      set {
+        platformId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    private string nickName_ = "";
+    /// <summary>
+    /// 昵称
+    /// </summary>
+    public string NickName {
+      get { return nickName_; }
+      set {
+        nickName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    private string head_ = "";
+    /// <summary>
+    /// 头像
+    /// </summary>
+    public string Head {
+      get { return head_; }
+      set {
+        head_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    private string roomId_ = "";
+    /// <summary>
+    /// 房间ID
+    /// </summary>
+    public string RoomId {
+      get { return roomId_; }
+      set {
+        roomId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    private long score_;
+    /// <summary>
+    /// 排位分
+    /// </summary>
+    public long Score {
+      get { return score_; }
+      set {
+        score_ = value;
+      }
+    }
+
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PlayerId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(PlayerId);
+      }
+      if (PlatformId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(PlatformId);
+      }
+      if (NickName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(NickName);
+      }
+      if (Head.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Head);
+      }
+      if (RoomId.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(RoomId);
+      }
+      if (Score != 0L) {
+        output.WriteRawTag(48);
+        output.WriteInt64(Score);
+      }
+    }
+
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayerId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(PlayerId);
+      }
+      if (PlatformId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PlatformId);
+      }
+      if (NickName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NickName);
+      }
+      if (Head.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Head);
+      }
+      if (RoomId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RoomId);
+      }
+      if (Score != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Score);
+      }
+      return size;
+    }
+
+    public void MergeFrom(pb::CodedInputStream input) {
+      playerId_ = 0;
+      platformId_ = "";
+      nickName_ = "";
+      head_ = "";
+      roomId_ = "";
+      score_ = 0;
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            PlayerId = input.ReadInt64();
+            break;
+          }
+          case 18: {
+            PlatformId = input.ReadString();
+            break;
+          }
+          case 26: {
+            NickName = input.ReadString();
+            break;
+          }
+          case 34: {
+            Head = input.ReadString();
+            break;
+          }
+          case 42: {
+            RoomId = input.ReadString();
+            break;
+          }
+          case 48: {
+            Score = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public partial class DPlayerInfo : pb::IMessage {
     private static readonly pb::MessageParser<DPlayerInfo> _parser = new pb::MessageParser<DPlayerInfo>(() => (DPlayerInfo)MessagePool.Instance.Fetch(typeof(DPlayerInfo)));
     public static pb::MessageParser<DPlayerInfo> Parser { get { return _parser; } }
@@ -671,7 +857,7 @@ namespace ETModel {
 
     private string platformId_ = "";
     /// <summary>
-    ///平台ID
+    /// 平台ID
     /// </summary>
     public string PlatformId {
       get { return platformId_; }
@@ -757,6 +943,17 @@ namespace ETModel {
       }
     }
 
+    private long score_;
+    /// <summary>
+    /// 排位分
+    /// </summary>
+    public long Score {
+      get { return score_; }
+      set {
+        score_ = value;
+      }
+    }
+
     public void WriteTo(pb::CodedOutputStream output) {
       if (PlayerId != 0L) {
         output.WriteRawTag(8);
@@ -794,6 +991,10 @@ namespace ETModel {
         output.WriteRawTag(72);
         output.WriteInt32(PlayerLev);
       }
+      if (Score != 0L) {
+        output.WriteRawTag(80);
+        output.WriteInt64(Score);
+      }
     }
 
     public int CalculateSize() {
@@ -825,6 +1026,9 @@ namespace ETModel {
       if (PlayerLev != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerLev);
       }
+      if (Score != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Score);
+      }
       return size;
     }
 
@@ -838,6 +1042,7 @@ namespace ETModel {
       playerAvatar_ = "";
       playerRoleLev_ = 0;
       playerLev_ = 0;
+      score_ = 0;
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -878,6 +1083,10 @@ namespace ETModel {
           }
           case 72: {
             PlayerLev = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            Score = input.ReadInt64();
             break;
           }
         }
@@ -994,6 +1203,17 @@ namespace ETModel {
       }
     }
 
+    private int camp_;
+    /// <summary>
+    /// 阵营
+    /// </summary>
+    public int Camp {
+      get { return camp_; }
+      set {
+        camp_ = value;
+      }
+    }
+
     public void WriteTo(pb::CodedOutputStream output) {
       if (SeatIdx != 0) {
         output.WriteRawTag(8);
@@ -1006,6 +1226,10 @@ namespace ETModel {
       if (playerInfo_ != null) {
         output.WriteRawTag(26);
         output.WriteMessage(PlayerInfo);
+      }
+      if (Camp != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Camp);
       }
     }
 
@@ -1020,6 +1244,9 @@ namespace ETModel {
       if (playerInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerInfo);
       }
+      if (Camp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Camp);
+      }
       return size;
     }
 
@@ -1027,6 +1254,7 @@ namespace ETModel {
       seatIdx_ = 0;
       isReady_ = false;
       if (playerInfo_ != null) MessagePool.Instance.Recycle(playerInfo_); playerInfo_ = null;
+      camp_ = 0;
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1046,6 +1274,10 @@ namespace ETModel {
               playerInfo_ = new global::ETModel.DPlayerInfo();
             }
             input.ReadMessage(playerInfo_);
+            break;
+          }
+          case 32: {
+            Camp = input.ReadInt32();
             break;
           }
         }
@@ -1069,6 +1301,17 @@ namespace ETModel {
       }
     }
 
+    private int randSeed_;
+    /// <summary>
+    ///随机种子
+    /// </summary>
+    public int RandSeed {
+      get { return randSeed_; }
+      set {
+        randSeed_ = value;
+      }
+    }
+
     private global::ETModel.DRoomConfig roomConfig_;
     /// <summary>
     /// 房间配置
@@ -1081,7 +1324,7 @@ namespace ETModel {
     }
 
     private static readonly pb::FieldCodec<global::ETModel.DRoomSeatInfo> _repeated_seats_codec
-        = pb::FieldCodec.ForMessage(26, global::ETModel.DRoomSeatInfo.Parser);
+        = pb::FieldCodec.ForMessage(34, global::ETModel.DRoomSeatInfo.Parser);
     private pbc::RepeatedField<global::ETModel.DRoomSeatInfo> seats_ = new pbc::RepeatedField<global::ETModel.DRoomSeatInfo>();
     /// <summary>
     /// 座位信息
@@ -1096,8 +1339,12 @@ namespace ETModel {
         output.WriteRawTag(10);
         output.WriteString(RoomId);
       }
+      if (RandSeed != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(RandSeed);
+      }
       if (roomConfig_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteMessage(RoomConfig);
       }
       seats_.WriteTo(output, _repeated_seats_codec);
@@ -1108,6 +1355,9 @@ namespace ETModel {
       if (RoomId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RoomId);
       }
+      if (RandSeed != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RandSeed);
+      }
       if (roomConfig_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(RoomConfig);
       }
@@ -1117,6 +1367,7 @@ namespace ETModel {
 
     public void MergeFrom(pb::CodedInputStream input) {
       roomId_ = "";
+      randSeed_ = 0;
       if (roomConfig_ != null) MessagePool.Instance.Recycle(roomConfig_); roomConfig_ = null;
       for (int i = 0; i < seats_.Count; i++) { MessagePool.Instance.Recycle(seats_[i]); }
       seats_.Clear();
@@ -1130,14 +1381,18 @@ namespace ETModel {
             RoomId = input.ReadString();
             break;
           }
-          case 18: {
+          case 16: {
+            RandSeed = input.ReadInt32();
+            break;
+          }
+          case 26: {
             if (roomConfig_ == null) {
               roomConfig_ = new global::ETModel.DRoomConfig();
             }
             input.ReadMessage(roomConfig_);
             break;
           }
-          case 26: {
+          case 34: {
             seats_.AddEntriesFrom(input, _repeated_seats_codec);
             break;
           }
@@ -1451,7 +1706,7 @@ namespace ETModel {
 
     private global::ETModel.DUserSimpleInfo playerInfo_;
     /// <summary>
-    ///玩家信息
+    /// 玩家信息
     /// </summary>
     public global::ETModel.DUserSimpleInfo PlayerInfo {
       get { return playerInfo_; }
@@ -1678,6 +1933,307 @@ namespace ETModel {
           }
           case 37: {
             W = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public partial class DLockStepFrameEvent : pb::IMessage {
+    private static readonly pb::MessageParser<DLockStepFrameEvent> _parser = new pb::MessageParser<DLockStepFrameEvent>(() => (DLockStepFrameEvent)MessagePool.Instance.Fetch(typeof(DLockStepFrameEvent)));
+    public static pb::MessageParser<DLockStepFrameEvent> Parser { get { return _parser; } }
+
+    private int eventId_;
+    /// <summary>
+    /// 事件ID
+    /// </summary>
+    public int EventId {
+      get { return eventId_; }
+      set {
+        eventId_ = value;
+      }
+    }
+
+    private int camp_;
+    /// <summary>
+    /// 阵营
+    /// </summary>
+    public int Camp {
+      get { return camp_; }
+      set {
+        camp_ = value;
+      }
+    }
+
+    private int path_;
+    /// <summary>
+    /// 路线
+    /// </summary>
+    public int Path {
+      get { return path_; }
+      set {
+        path_ = value;
+      }
+    }
+
+    private int tbid_;
+    /// <summary>
+    /// 配表ID
+    /// </summary>
+    public int Tbid {
+      get { return tbid_; }
+      set {
+        tbid_ = value;
+      }
+    }
+
+    private string uid_ = "";
+    /// <summary>
+    /// ID
+    /// </summary>
+    public string Uid {
+      get { return uid_; }
+      set {
+        uid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    private string nickName_ = "";
+    /// <summary>
+    /// 玩家昵称
+    /// </summary>
+    public string NickName {
+      get { return nickName_; }
+      set {
+        nickName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    private string headIcon_ = "";
+    /// <summary>
+    /// 玩家头像
+    /// </summary>
+    public string HeadIcon {
+      get { return headIcon_; }
+      set {
+        headIcon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    private long num_;
+    /// <summary>
+    /// 数量	
+    /// </summary>
+    public long Num {
+      get { return num_; }
+      set {
+        num_ = value;
+      }
+    }
+
+    private long totalExp_;
+    /// <summary>
+    /// 总积分
+    /// </summary>
+    public long TotalExp {
+      get { return totalExp_; }
+      set {
+        totalExp_ = value;
+      }
+    }
+
+    private long totalWin_;
+    /// <summary>
+    /// 连胜
+    /// </summary>
+    public long TotalWin {
+      get { return totalWin_; }
+      set {
+        totalWin_ = value;
+      }
+    }
+
+    private int unitLev_;
+    /// <summary>
+    /// 单位等级
+    /// </summary>
+    public int UnitLev {
+      get { return unitLev_; }
+      set {
+        unitLev_ = value;
+      }
+    }
+
+    private int pay_;
+    /// <summary>
+    /// 是否为付费事件
+    /// </summary>
+    public int Pay {
+      get { return pay_; }
+      set {
+        pay_ = value;
+      }
+    }
+
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (EventId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(EventId);
+      }
+      if (Camp != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Camp);
+      }
+      if (Path != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Path);
+      }
+      if (Tbid != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Tbid);
+      }
+      if (Uid.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Uid);
+      }
+      if (NickName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(NickName);
+      }
+      if (HeadIcon.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(HeadIcon);
+      }
+      if (Num != 0L) {
+        output.WriteRawTag(64);
+        output.WriteInt64(Num);
+      }
+      if (TotalExp != 0L) {
+        output.WriteRawTag(72);
+        output.WriteInt64(TotalExp);
+      }
+      if (TotalWin != 0L) {
+        output.WriteRawTag(80);
+        output.WriteInt64(TotalWin);
+      }
+      if (UnitLev != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(UnitLev);
+      }
+      if (Pay != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(Pay);
+      }
+    }
+
+    public int CalculateSize() {
+      int size = 0;
+      if (EventId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(EventId);
+      }
+      if (Camp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Camp);
+      }
+      if (Path != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Path);
+      }
+      if (Tbid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Tbid);
+      }
+      if (Uid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Uid);
+      }
+      if (NickName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NickName);
+      }
+      if (HeadIcon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(HeadIcon);
+      }
+      if (Num != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Num);
+      }
+      if (TotalExp != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(TotalExp);
+      }
+      if (TotalWin != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(TotalWin);
+      }
+      if (UnitLev != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(UnitLev);
+      }
+      if (Pay != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Pay);
+      }
+      return size;
+    }
+
+    public void MergeFrom(pb::CodedInputStream input) {
+      eventId_ = 0;
+      camp_ = 0;
+      path_ = 0;
+      tbid_ = 0;
+      uid_ = "";
+      nickName_ = "";
+      headIcon_ = "";
+      num_ = 0;
+      totalExp_ = 0;
+      totalWin_ = 0;
+      unitLev_ = 0;
+      pay_ = 0;
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            EventId = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Camp = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            Path = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            Tbid = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            Uid = input.ReadString();
+            break;
+          }
+          case 50: {
+            NickName = input.ReadString();
+            break;
+          }
+          case 58: {
+            HeadIcon = input.ReadString();
+            break;
+          }
+          case 64: {
+            Num = input.ReadInt64();
+            break;
+          }
+          case 72: {
+            TotalExp = input.ReadInt64();
+            break;
+          }
+          case 80: {
+            TotalWin = input.ReadInt64();
+            break;
+          }
+          case 88: {
+            UnitLev = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            Pay = input.ReadInt32();
             break;
           }
         }

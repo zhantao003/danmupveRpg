@@ -485,8 +485,8 @@ public class CResLoadMgr : MonoBehaviour
                     byte[] bytes = pAtom.pWWW.downloadHandler.data;
 
                     string szContent = System.Text.Encoding.Unicode.GetString(bytes);
-                    JSONClass m_pJsonData = new JSONClass();
-                    m_pJsonData = JSONNode.Parse(szContent) as JSONClass;
+                    JSONObject m_pJsonData = new JSONObject();
+                    m_pJsonData = JSONNode.Parse(szContent) as JSONObject;
                     if (m_pJsonData == null)
                     {
                         Debug.LogError("Error JSON Data : " + szContent);

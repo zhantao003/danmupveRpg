@@ -35,11 +35,37 @@ public class CNetConfigMgr
         }
         else
         {
-            msgContent.SetString("httpserver", "http://116.62.102.216");
-            msgContent.SetInt("httpport", 8081);
+#if UNITY_EDITOR
+            msgContent.SetString("httpserver", "http://101.43.51.98");
+            msgContent.SetInt("httpport", 9800);
 
-            msgContent.SetString("etserver", "192.168.1.5");
+            msgContent.SetString("etserver", "127.0.0.1");
             msgContent.SetInt("etport", 10002);
+#else
+
+            if(CDanmuSDKCenter.Ins.emPlatform == CDanmuSDKCenter.EMPlatform.Bilibili)
+            {
+                msgContent.SetString("httpserver", "http://8.134.11.214");
+                msgContent.SetInt("httpport", 9800);
+                msgContent.SetString("etserver", "8.134.59.132");
+                msgContent.SetInt("etport", 10000);
+            }
+            else if(CDanmuSDKCenter.Ins.emPlatform == CDanmuSDKCenter.EMPlatform.DouyinOpen ||
+                CDanmuSDKCenter.Ins.emPlatform == CDanmuSDKCenter.EMPlatform.DouyinYS)
+            {
+                msgContent.SetString("httpserver", "http://8.134.59.13");
+                msgContent.SetInt("httpport", 9800);
+                msgContent.SetString("etserver", "192.168.1.5");
+                msgContent.SetInt("etport", 10002);
+            }
+            else if(CDanmuSDKCenter.Ins.emPlatform == CDanmuSDKCenter.EMPlatform.YY)
+            {
+                msgContent.SetString("httpserver", "http://8.134.59.132");
+                msgContent.SetInt("httpport", 9800);
+                msgContent.SetString("etserver", "8.134.59.132");
+                msgContent.SetInt("etport", 10000);
+            }
+#endif
 
             Debug.LogWarning("初始化网络配置文件:" + msgContent.GetData());
 

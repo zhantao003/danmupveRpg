@@ -14,7 +14,7 @@ public class DCmdExit : CDanmuCmdAction
         {
             return;
         }
-        CPlayerMgr.Ins.RemovePlayerUnit(uid);
+        //CPlayerMgr.Ins.RemovePlayerUnit(uid);
         CPlayerMgr.Ins.RemovePlayer(uid);
 
         return;

@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c88b982cf45a349a0794062d1df0fd, type: 3}
   m_Name: DanmuBilibiliConfig
   m_EditorClassIdentifier: 
-  accessKeySecret: Dm6SDaJppB3Ts5kYQYbg0bJLLsFgbd
-  accessKeyId: q2EAG9wnRBqwBtD72uPHSrgw
-  devUid: 559642
-  roomId: 24965053
-  appId: 1658635653909
-  code: BQHV5RI0FHTS0
+  accessKeySecret: 3i5e0cgwQgImsmAsu40S8pPgP2sOAA
+  accessKeyId: 6y56lpViYytWWTmHJJtEFCRz
+  roomId: 27270172
+  appId: 1696133060423
+  code: CYUXF9OE0POG3

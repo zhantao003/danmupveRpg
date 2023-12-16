@@ -11,19 +11,32 @@ public class CDanmuEventMapConfig : SerializedMonoBehaviour
     [DictionaryDrawerSettings(KeyLabel = "弹幕内容", ValueLabel = "事件映射")]
     public Dictionary<string, CDanmuChatEventInfo> dicNormalChat = new Dictionary<string, CDanmuChatEventInfo>();
     [DictionaryDrawerSettings(KeyLabel = "弹幕内容", ValueLabel = "事件映射")]
+    public Dictionary<string, CDanmuChatEventInfo> dicContainChat = new Dictionary<string, CDanmuChatEventInfo>();
+    [DictionaryDrawerSettings(KeyLabel = "弹幕内容", ValueLabel = "事件映射")]
     public Dictionary<string, CDanmuChatEventInfo> dicFollowNumberChat = new Dictionary<string, CDanmuChatEventInfo>();
     [DictionaryDrawerSettings(KeyLabel = "礼物", ValueLabel = "事件映射")]
     public Dictionary<string, CDanmuGiftEventInfo> dicGift = new Dictionary<string, CDanmuGiftEventInfo>();
 
     public CDanmuChatEventInfo GetDanmuEvent(string content)
     {
+        content = content.Trim();
+
         CDanmuChatEventInfo pRes;
         if (dicNormalChat.TryGetValue(content, out pRes))
         {
             return pRes;
         }
 
-        foreach(string keys in dicFollowNumberChat.Keys)
+        foreach (string keys in dicContainChat.Keys)
+        {
+            if (content.StartsWith(keys))
+            {
+                pRes = dicContainChat[keys];
+                return pRes;
+            }
+        }
+
+        foreach (string keys in dicFollowNumberChat.Keys)
         {
             if(content.StartsWith(keys))
             {

@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using UnityEngine.EventSystems;
+using System.Reflection;
+using MongoDB.Bson;
+using FixMath.NET;
 
 public class ParaBolaInfo
 {
@@ -21,6 +24,12 @@ public class CHelpTools
     public static long GetTimeStamp()
     {
         TimeSpan ts = DateTime.Now - pOldTime;
+        return (long)ts.TotalMilliseconds;
+    }
+
+    public static long GetServerTimeStamp(DateTime serverTime)
+    {
+        TimeSpan ts = serverTime - pOldTime;
         return (long)ts.TotalMilliseconds;
     }
 
@@ -407,6 +416,12 @@ public class CHelpTools
         return BitConverter.ToInt64(buffer, 0);
     }
 
+    public static long GenerateIdFix64()
+    {
+        //uint nRes = CLockStepMgr.Ins.GetRandomInt();
+        return CLockStepMgr.Ins.GetRandomInt();
+    }
+
     public static bool IsIntInList(int target, int[] arrCheck)
     {
         for(int i=0; i<arrCheck.Length; i++)
@@ -462,7 +477,34 @@ public class CHelpTools
         float z = ((1 - t) * (1 - t)) * _p0.z + 2 * t * (1 - t) * _p1.z + t * t * _p2.z;
         Vector3 pos = new Vector3(x, y, z);
         return pos;
-    }   
+    }
+
+    public static FixVector3 GetCurvePointFix64(FixVector3 _p0, FixVector3 _p1, FixVector3 _p2, Fix64 t)
+    {
+        t = Clamp01Fix64(t);
+
+        Fix64 x = ((1 - t) * (1 - t)) * _p0.x + 2 * t * (1 - t) * _p1.x + t * t * _p2.x;
+        Fix64 y = ((1 - t) * (1 - t)) * _p0.y + 2 * t * (1 - t) * _p1.y + t * t * _p2.y;
+        Fix64 z = ((1 - t) * (1 - t)) * _p0.z + 2 * t * (1 - t) * _p1.z + t * t * _p2.z;
+        FixVector3 pos = new FixVector3(x, y, z);
+        return pos;
+    }
+
+    public static Fix64 Clamp01Fix64(Fix64 t)
+    {
+        if (t < Fix64.Zero)
+        {
+            return Fix64.Zero;
+        }
+        else if(t>Fix64.One)
+        {
+            return Fix64.One;
+        }
+        else
+        {
+            return t;
+        }
+    }
 
     public static string GetGoldSZ(long money)
     {
@@ -619,7 +661,137 @@ public class CHelpTools
 
         return null;
     }
+    public static void NumJump(UnityEngine.UI.Text txt, int sourceNum, int determinNum, string strFormat = "{0}",float jumpTime = 2f)
+    {
+        if (coroutines.ContainsKey(txt))
+        {
+            if(coroutines[txt]!=null)
+                CGlobalInit.Ins.StopCoroutine(coroutines[txt]);
+            txt.text = string.Format(strFormat, sourceNum.ToString("F0"));
+            coroutines[txt] = CGlobalInit.Ins.StartCoroutine(NumJump(txt, (float)sourceNum, (float)determinNum, strFormat, jumpTime));
+        }
+        else
+        {
+            coroutines.Add(txt, CGlobalInit.Ins.StartCoroutine(NumJump(txt, (float)sourceNum, (float)determinNum, strFormat, jumpTime)));
+        }
+    }
 
+    public static void NumLongJump(UnityEngine.UI.Text txt, long sourceNum, long determinNum, string strFormat = "{0}", float jumpTime = 2f)
+    {
+        if (coroutines.ContainsKey(txt))
+        {
+            if (coroutines[txt] != null)
+                CGlobalInit.Ins.StopCoroutine(coroutines[txt]);
+            txt.text = string.Format(strFormat, sourceNum.ToString("F0"));
+            coroutines[txt] = CGlobalInit.Ins.StartCoroutine(NumJump(txt, (float)sourceNum, (float)determinNum, strFormat, jumpTime));
+        }
+        else
+        {
+            coroutines.Add(txt, CGlobalInit.Ins.StartCoroutine(NumJump(txt, (float)sourceNum, (float)determinNum, strFormat, jumpTime)));
+        }
+    }
+
+    public static Dictionary<UnityEngine.UI.Text, Coroutine> coroutines = new Dictionary<Text, Coroutine>();
+    static IEnumerator NumJump(UnityEngine.UI.Text txt, float sourceNum, float determinNum, string strFormat,float jumpTime)
+    {
+        if (txt == null)
+            yield break;
+        bool forward = true;
+        if (sourceNum > determinNum)
+            forward = false;
+        float gainNum = determinNum - sourceNum;
+        WaitForEndOfFrame wtf = new WaitForEndOfFrame();
+        if (forward)
+        {
+            while (sourceNum < determinNum)
+            {
+                if (txt == null)
+                    yield break;
+                txt.text = string.Format(strFormat, sourceNum.ToString("F0"));
+                sourceNum = Mathf.MoveTowards(sourceNum, determinNum, gainNum / jumpTime * Time.deltaTime);
+                yield return wtf;
+            }
+        }
+        else
+        {
+            while (sourceNum > determinNum)
+            {
+                if (txt == null)
+                    yield break;
+                txt.text = string.Format(strFormat, sourceNum.ToString("F0"));
+                sourceNum = Mathf.MoveTowards(sourceNum, determinNum, -gainNum / jumpTime * Time.deltaTime);
+                yield return wtf;
+            }
+        }
+        if (txt == null)
+            yield break;
+        txt.text = string.Format(strFormat, determinNum.ToString("F0"));
+    }
+    public static string ColorToHTML(Color color)
+    {
+        return "#" + ColorUtility.ToHtmlStringRGB(color);
+    }
+
+    /// <summary>
+    /// 获取摄像机的视口区域(透视相机模式)
+    /// </summary>
+    /// <param name="distance">距离相机的距离</param>
+    /// <returns></returns>
+    public static Vector3[] GetCorners(Camera _camera, float distance)
+    {
+        Vector3[] corners = new Vector3[4];
+        float halfFOV = (_camera.fieldOfView * 0.5f) * Mathf.Deg2Rad;
+        float aspect = _camera.aspect;
+
+        float height = distance * Mathf.Tan(halfFOV);
+        float width = height * aspect;
+        Transform cameraTransform = _camera.transform;
+        var position = cameraTransform.position;
+        var right = cameraTransform.right;
+        var up = cameraTransform.up;
+        var forward = cameraTransform.forward;
+        // UpperLeft
+        corners[0] = position - (right * width);
+        corners[0] += up * height;
+        corners[0] += forward * distance;
+
+        // UpperRight
+        corners[1] = position + (right * width);
+        corners[1] += up * height;
+        corners[1] += forward * distance;
+        // LowerLeft
+        corners[2] = position - (right * width);
+        corners[2] -= up * height;
+        corners[2] += forward * distance;
+
+        // LowerRight
+        corners[3] = position + (right * width);
+        corners[3] -= up * height;
+        corners[3] += forward * distance;
+        return corners;
+
+    }
+
+    /// <summary>
+    /// 获取使用正交相机时，主摄像机在地图上的移动区域。
+    /// 使用正交相机时，可以通过旋转摄像机X轴来显示地图，此时通过Y轴控制摄像机高度，X控制水平位置，Z轴控制上下位置。
+    /// </summary>
+    /// <returns>返回摄像机移动区域.</returns>
+    /// <param name="RotationX">摄像机旋转角度(X轴)</param>
+    /// <param name="CameraSize">相机大小</param>
+    /// <param name="CamersY">摄像机高度(Y轴坐标)</param>
+    /// <param name="MapW">地图宽度</param>
+    /// <param name="MapH">地图高度</param>
+    public static Rect OrthographicCameraEdge(float RotationX, float CameraSize, float CamersY, float MapW, float MapH)
+    {
+        float CXSize = CameraSize * 2 * ((float)Screen.width / (float)Screen.height);
+        float CYSize = CameraSize * 2 / Mathf.Cos(RotationX * Mathf.Deg2Rad);
+        return new Rect(
+            CXSize / 2.0f,
+            CYSize / 2.0f - CamersY,
+            CXSize,
+            CYSize); ;
+    }
 
     #region Tween动画曲线
 
@@ -730,4 +902,5 @@ public class CHelpTools
 
     #endregion
 
+   
 }

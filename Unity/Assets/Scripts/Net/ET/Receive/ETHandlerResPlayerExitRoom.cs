@@ -29,11 +29,11 @@ namespace ETModel
 
         void RefreshUI(int seatIdx)
         {
-            UIETMain uiMain = GameObject.FindObjectOfType<UIETMain>();
-            if (uiMain == null) return;
+            //UIETMain uiMain = GameObject.FindObjectOfType<UIETMain>();
+            //if (uiMain == null) return;
 
-            UIETBoardRoom uiETRoom = uiMain.objBoardRoom.GetComponent<UIETBoardRoom>();
-            uiETRoom.ClearSlot(seatIdx);
+            //UIETBoardRoom uiETRoom = uiMain.objBoardRoom.GetComponent<UIETBoardRoom>();
+            //uiETRoom.ClearSlot(seatIdx);
         }
     }
 

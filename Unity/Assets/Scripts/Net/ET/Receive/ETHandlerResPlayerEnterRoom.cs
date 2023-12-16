@@ -21,16 +21,11 @@ namespace ETModel
 
         static void RefreshUI(int seatIdx)
         {
-            UIETMain uiMain = GameObject.FindObjectOfType<UIETMain>();
-            if (uiMain == null) return;
-
-            UIETBoardRoom uiETRoom = uiMain.objBoardRoom.GetComponent<UIETBoardRoom>();
-
             ERoom.RoomSlot pSlot = ERoomInfoMgr.Ins.pSelfRoom.GetPlayerBySeat(seatIdx);
             if (pSlot == null) return;
 
-            uiETRoom.SetSlotInfo(pSlot);
-            uiETRoom.CheckGameStart();
+            UINetMatch match = UIManager.Instance.GetUI(UIResType.ETNetMatch) as UINetMatch;
+            match.MatchSetEnemyInfo(pSlot.player);
         }
     }
 }

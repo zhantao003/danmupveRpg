@@ -1,8 +1,9 @@
-﻿/// <summary>
+﻿using SharedLibrary;
+/// <summary>
 /// 内部消息处理Handler
 /// </summary>
 public interface INetEventHandler {
-    void OnMsgHandler(CLocalNetMsg pMsg);
+    void OnMsgHandler(string resPonseJson);
 
-    void OnErrorCode(CLocalNetMsg pMsg);
+    void OnErrorCode(string failReason);
 }

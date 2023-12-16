@@ -12,18 +12,19 @@ public struct ERoomSimpleInfo
 
 public class ERoomInfoMgr :CSingleMgrBase<ERoomInfoMgr>
 {
-    public ERoom pSelfRoom; //µ±Ç°ËùÔÚµÄ·¿¼ä
+    public ERoom pSelfRoom; //å½“å‰æ‰€åœ¨çš„æˆ¿é—´
 
     public List<ERoomSimpleInfo> listPublicRooms = new List<ERoomSimpleInfo>();
 
     public void InitRoom(DRoomInfo RoomInfo)
     {
-        //´´½¨·¿¼ä¶ÔÏó
+        //åˆ›å»ºæˆ¿é—´å¯¹è±¡
         ERoom pRoom = ComponentFactory.Create<ERoom, string>(RoomInfo.RoomId);
         pRoom.nMapId = RoomInfo.RoomConfig.MapId;
         pRoom.nMaxPlayer = RoomInfo.RoomConfig.MaxPlayer;
+        pRoom.nRandSeed = (uint)RoomInfo.RandSeed;
 
-        //·¿¼äµÄ×ùÎ»ĞÅÏ¢
+        //æˆ¿é—´çš„åº§ä½ä¿¡æ¯
         for (int i = 0; i < RoomInfo.Seats.Count; i++)
         {
             DRoomSeatInfo pSeatInfo = RoomInfo.Seats[i];
@@ -47,17 +48,19 @@ public class ERoomInfoMgr :CSingleMgrBase<ERoomInfoMgr>
         pRoomSlot.nSeatIdx = seatInfo.SeatIdx;
         pRoomSlot.isReady = seatInfo.IsReady;
         pRoomSlot.userId = seatInfo.PlayerInfo.PlayerId;
+        pRoomSlot.camp = seatInfo.Camp;
 
         pRoomSlot.player = new EUserInfo();
         pRoomSlot.player.nUserId = seatInfo.PlayerInfo.PlayerId;
         pRoomSlot.player.szPlatformId = seatInfo.PlayerInfo.PlatformId;
         pRoomSlot.player.szNickName = seatInfo.PlayerInfo.PlayerName;
         pRoomSlot.player.szHeadIcon = seatInfo.PlayerInfo.PlayerHead;
+        pRoomSlot.player.nScore = seatInfo.PlayerInfo.Score;
 
         room.AddPlayer(pRoomSlot);
     }
 
-    #region ·¿¼äÁĞ±íÏà¹Ø
+    #region æˆ¿é—´åˆ—è¡¨ç›¸å…³
 
     public void AddPublicRoom(ERoomSimpleInfo roomInfo)
     {

@@ -20,6 +20,9 @@ public delegate void DelegateLFuncCall(long value);
 //公共委托方法 void(float)
 public delegate void DelegateFFuncCall(float value);
 
+//公共委托方法 void(float,float)
+public delegate void DelegateFFFuncCall(float value, float value2);
+
 //公共委托方法 void(string)
 public delegate void DelegateSFuncCall(string value);
 
@@ -48,3 +51,13 @@ public delegate void DelegateOFuncCall(params object[] value);
 public delegate void DelegatePosFuncCall(int nX,int nY);
 
 public delegate void OnDeleagteLoginByTypeSuc(CPlayerBaseInfo info);
+
+///Buff修改事件
+public delegate void OnDelegateBuffChgCall(bool add, int nBuffID,int num);
+
+public delegate void DelegateUnituncCall(CPlayerUnit unit);
+
+public delegate void DelegateCampBattleChg(long battle, EMUnitCamp camp);
+
+//切换名字头像显示
+public delegate void DelegateNameHeadIconSwitchChg(CBattleMgr.EMDisPlayName displayType);

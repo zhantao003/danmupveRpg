@@ -47,6 +47,7 @@ public class ETNetSessionHelper
     /// </summary>
     public void OnSessionDispose()
     {
+        ETHeartBeat.Ins.bActive = false;
         ETGame.EventSystem.Run(EventIdType.SessionDisconnect);
     }
 

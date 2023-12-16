@@ -14,20 +14,22 @@ public class ERoomAwakeSystem : AwakeSystem<ERoom, string>
 
 public class ERoom : Entity
 {
-    public string szRoomID;    //·¿¼äÎ¨Ò»ID
+    public string szRoomID;    //æˆ¿é—´å”¯ä¸€ID
 
-    public int nMapId;      //µØÍ¼ID
-    public int nMaxPlayer;  //×î´óÓÎÍæÈËÊı
+    public int nMapId;      //åœ°å›¾ID
+    public int nMaxPlayer;  //æœ€å¤§æ¸¸ç©äººæ•°
+    public uint nRandSeed;   //éšæœºç§å­æ•°
 
     public class RoomSlot
     {
-        public int nSeatIdx;
+        public int nSeatIdx;    //0çº¢æ–¹   1è“æ–¹
         public long userId;
         public bool isReady;
         public EUserInfo player;
+        public int camp;        //é˜µè¥
     }
 
-    // ·¿¼ä×ùÎ»ĞÅÏ¢
+    // æˆ¿é—´åº§ä½ä¿¡æ¯
     protected List<RoomSlot> listRoomSlot = new List<RoomSlot>();
 
     public void Awake(string id)
@@ -59,7 +61,7 @@ public class ERoom : Entity
     }
 
     /// <summary>
-    /// »ñÈ¡Íæ¼Ò×Ô¼ºµÄĞÅÏ¢
+    /// è·å–ç©å®¶è‡ªå·±çš„ä¿¡æ¯
     /// </summary>
     public RoomSlot GetSelfSlot()
     {
@@ -70,8 +72,21 @@ public class ERoom : Entity
         return pRes;
     }
 
+    public RoomSlot GetEnemySlot()
+    {
+        for (int i = 0; i < listRoomSlot.Count; i++)
+        {
+            if (listRoomSlot[i].userId != EUserInfoMgr.Ins.pSelf.nUserId)
+            {
+                return listRoomSlot[i];
+            }
+        }
+
+        return null;
+    }
+
     /// <summary>
-    /// ¸ù¾İListµÄË÷Òı»ñÈ¡RoomSlot¶ÔÏó
+    /// æ ¹æ®Listçš„ç´¢å¼•è·å–RoomSlotå¯¹è±¡
     /// </summary>
     public RoomSlot GetPlayerByIdx(int idx)
     {
@@ -81,7 +96,7 @@ public class ERoom : Entity
     }
 
     /// <summary>
-    /// ¸ù¾İ×ùÎ»ºÅ»ñÈ¡RoomSlot¶ÔÏó
+    /// æ ¹æ®åº§ä½å·è·å–RoomSlotå¯¹è±¡
     /// </summary>
     public RoomSlot GetPlayerBySeat(int seat)
     {
@@ -99,7 +114,7 @@ public class ERoom : Entity
     }
 
     /// <summary>
-    /// ¸ù¾İÍæ¼ÒID»ñÈ¡RoomSlot¶ÔÏó
+    /// æ ¹æ®ç©å®¶IDè·å–RoomSlotå¯¹è±¡
     /// </summary>
     /// <param name="playerID"></param>
     public RoomSlot GetPlayerByID(long playerID)
@@ -116,7 +131,7 @@ public class ERoom : Entity
     }
 
     /// <summary>
-    /// »ñÈ¡·¿¼äÄÚÍæ¼ÒÊıÁ¿
+    /// è·å–æˆ¿é—´å†…ç©å®¶æ•°é‡
     /// </summary>
     public int GetPlayerCount()
     {
@@ -124,7 +139,7 @@ public class ERoom : Entity
     }
 
     /// <summary>
-    /// ÊÇ·ñ¶¼×¼±¸ÁË
+    /// æ˜¯å¦éƒ½å‡†å¤‡äº†
     /// </summary>
     public bool IsAllReady()
     {

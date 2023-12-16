@@ -50,4 +50,21 @@ public class CLogTools
             Log(stackTrace);
         }
     }
+
+    public static void Info(string content)
+    {
+#if UNITY_EDITOR
+        Debug.Log(content);
+#endif
+    }
+
+    public static void Warning(string content)
+    {
+        Debug.LogWarning(content);
+    }
+
+    public static void Error(string error)
+    {
+        Debug.LogError(error);
+    }
 }

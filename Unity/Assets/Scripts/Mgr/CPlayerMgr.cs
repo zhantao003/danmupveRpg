@@ -1,3 +1,4 @@
+using FixMath.NET;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,75 +7,219 @@ public class CPlayerMgr : CSingleMgrBase<CPlayerMgr>
 {
     public delegate void DelegatePlayerChg(CPlayerBaseInfo player);
 
-    public CPlayerBaseInfo pOwner = null;   //Ö÷²¥±¾ÈË
+    public CPlayerBaseInfo pOwner = null;   //ä¸»æ’­æœ¬äºº
 
     /// <summary>
-    /// ËùÓĞÍæ¼Ò
+    /// æ‰€æœ‰ç©å®¶
     /// </summary>
     public Dictionary<string, CPlayerBaseInfo> dicAllPlayers = new Dictionary<string, CPlayerBaseInfo>();
     public DelegatePlayerChg dlgAllPlayerAdd;
     public DelegatePlayerChg dlgAllPlayerRemove;
 
     /// <summary>
-    /// Íæ¼ÒÊµÌå¶ÔÏó
+    /// ç©å®¶å®ä½“å¯¹è±¡
     /// </summary>
-    public Dictionary<string, CPlayerUnit> dicPlayerUnits = new Dictionary<string, CPlayerUnit>();  //ÓÎÏ·ÊµÌå
-    public DelegatePlayerChg dlgPlayerUnitChg;
+    //ç©å®¶Avatarå¾…æœºå®ä½“
+    public Dictionary<string, List<CPlayerUnit>> dicPlayerIdleAvatar = new Dictionary<string, List<CPlayerUnit>>();
 
-    /// <summary>
-    /// »ñÈ¡Ö¸¶¨Íæ¼ÒµÄ¶ÔÏó
-    /// </summary>
-    /// <param name="id"></param>
-    /// <returns></returns>
-    public CPlayerUnit GetPlayerUnit(string id)
+    public Dictionary<string, List<CPlayerUnit>> dicPlayerAliveAvatar = new Dictionary<string, List<CPlayerUnit>>();
+
+    public List<CPlayerBaseInfo> top3ScorePlayersLeft = new List<CPlayerBaseInfo>();
+    public List<CPlayerBaseInfo> top3ScorePlayersRight = new List<CPlayerBaseInfo>();
+
+    FixVector3 vUnitIdlePos;
+
+    public void Init()
     {
-        CPlayerUnit pUnit = null;
-        if (!dicPlayerUnits.TryGetValue(id, out pUnit))
+        vUnitIdlePos = new FixVector3((Fix64)10000, (Fix64)10000, Fix64.Zero);
+    }
+
+    public CPlayerUnit PopUnit(string szPrefabName)
+    {
+        CPlayerUnit unit = null;
+        List<CPlayerUnit> units = null;
+        if(dicPlayerIdleAvatar.TryGetValue(szPrefabName, out units))
         {
-            return null;
+            if (units != null &&
+                units.Count > 0)
+            {
+                unit = units[0];
+                units.RemoveAt(0);
+            }
+        }
+        return unit;
+    }
+
+    public int GetAllAliveCount()
+    {
+        if (dicPlayerAliveAvatar == null) return 0;
+        int nAliveCount = 0;
+
+        foreach(var value in dicPlayerAliveAvatar.Values)
+        {
+            nAliveCount += value.Count;
         }
 
-        return pUnit;
+        return nAliveCount;
+    }
+
+    public int GetAliveCountHighLev(EMUnitCamp camp)
+    {
+        if (dicPlayerAliveAvatar == null) return 0;
+        int nAliveCount = 0;
+
+        foreach (var value in dicPlayerAliveAvatar.Values)
+        {
+            if (value.Count > 0 &&
+                    value[0].pUnitData.emUnitLev <= EMUnitLev.Lv2)
+            {
+                continue;
+            }
+            for(int i = 0;i < value.Count;i++)
+            {
+                if(value[i].emCamp == camp)
+                {
+                    nAliveCount++;
+                }
+            }
+        }
+
+        return nAliveCount;
+    }
+
+    public int GetAliveCountByLev(EMUnitLev lev, EMUnitCamp camp)
+    {
+        if (dicPlayerAliveAvatar == null) return 0;
+        int nAliveCount = 0;
+
+        foreach (var value in dicPlayerAliveAvatar.Values)
+        {
+            if (value.Count > 0 &&
+                value[0].pUnitData.emUnitLev != lev)
+            {
+                continue;
+            }
+            for (int i = 0; i < value.Count; i++)
+            {
+                if (value[i].emCamp == camp)
+                {
+                    nAliveCount++;
+                }
+            }
+        }
+
+        return nAliveCount;
     }
 
     /// <summary>
-    /// Ìí¼ÓÓÎÏ·ÊµÌå
+    /// æ·»åŠ æ¸¸æˆå®ä½“
     /// </summary>
     /// <param name="unit"></param>
     public void AddPlayerUnit(CPlayerUnit unit)
     {
-        if (dicPlayerUnits.ContainsKey(unit.uid))
+        string szPrefabName = unit.pUnitData.szPrefabName + "red";// (unit.emCamp == EMUnitCamp.Blue ? CBattleMgr.Ins.mapMgr.pBlueBase.pCampInfo.szCampName :
+                                                                  //            CBattleMgr.Ins.mapMgr.pRedBase.pCampInfo.szCampName);
+        if (dicPlayerAliveAvatar.ContainsKey(szPrefabName))
         {
-            if (dicPlayerUnits[unit.uid] != null)
-            {
-                GameObject.Destroy(dicPlayerUnits[unit.uid].gameObject);
-            }
-            else
-            {
-                Debug.Log("ÖØ¸´µÄÍæ¼ÒID£º" + unit.uid);
-            }
+            dicPlayerAliveAvatar[szPrefabName].Add(unit);
+        }
+        else
+        {
+            List<CPlayerUnit> listUnits = new List<CPlayerUnit>();
+            listUnits.Add(unit);
+            dicPlayerAliveAvatar.Add(szPrefabName, listUnits);
+        }
+    }
 
-            dicPlayerUnits.Remove(unit.uid);
+    /// <summary>
+    /// è·å–å¯¹åº”é˜µè¥çš„æ¸¸æˆå®ä½“
+    /// </summary>
+    /// <param name="unitCamp"></param>
+    /// <returns></returns>
+    public List<CPlayerUnit> GetAliveUnitByCamp(EMUnitCamp unitCamp)
+    {
+        List<CPlayerUnit> playerUnits = new List<CPlayerUnit>();
+
+        foreach (List<CPlayerUnit> units in dicPlayerAliveAvatar.Values)
+        {
+            for (int i = 0; i < units.Count; i++)
+            {
+                if (units[i].emCamp == unitCamp)
+                {
+                    playerUnits.Add(units[i]);
+                }
+            }
         }
 
-        dicPlayerUnits.Add(unit.uid, unit);
+        return playerUnits;
+    }
+
+    /// <summary>
+    /// è·å–å¯¹åº”é˜µè¥å’Œè·¯å¾„çš„æ¸¸æˆå®ä½“
+    /// </summary>
+    /// <param name="unitCamp"></param>
+    /// <returns></returns>
+    public List<CPlayerUnit> GetAliveUnitByCampAndPath(EMUnitCamp unitCamp,EMStayPathType pathType)
+    {
+        List<CPlayerUnit> playerUnits = new List<CPlayerUnit>();
+
+        foreach (List<CPlayerUnit> units in dicPlayerAliveAvatar.Values)
+        {
+            for (int i = 0; i < units.Count; i++)
+            {
+                if (units[i].emCamp == unitCamp &&
+                    units[i].emPathType == pathType)
+                {
+                    playerUnits.Add(units[i]);
+                }
+            }
+        }
+
+        return playerUnits;
+    }
+
+    public void ClearAllPlayerInfo()
+    {
+        dicAllPlayers.Clear();
+        top3ScorePlayersLeft.Clear();
+        top3ScorePlayersRight.Clear();
     }
 
     public void ClearAllPlayerUnit()
     {
-        foreach (CPlayerUnit unit in dicPlayerUnits.Values)
-        {
-            unit.Recycle();
-            GameObject.Destroy(unit.gameObject);
-        }
+        //foreach (List<CPlayerUnit> units in dicPlayerAliveAvatar.Values)
+        //{
+        //    for (int i = 0; i < units.Count;)
+        //    {
+        //        if (units[i] == null ||
+        //            units[i].gameObject == null)
+        //        {
+        //            i++;
+        //            continue;
+        //        }
 
-        dicPlayerUnits.Clear();
+        //        GameObject obj = units[i].gameObject;
+        //        units[i].Recycle();
+        //        GameObject.Destroy(obj);
+        //    }
+
+        //    units.Clear();
+        //}
+
+        dicPlayerAliveAvatar.Clear();
+        dicPlayerIdleAvatar.Clear();
     }
 
     public void AddPlayer(CPlayerBaseInfo player)
     {
-        dicAllPlayers.Add(player.uid, player);
-
+        if (!dicAllPlayers.ContainsKey(player.uid))
+        {
+            dicAllPlayers.Add(player.uid, player);
+        }
+        ///å‘é€ç©å®¶åŠ å…¥çš„ç›‘å¬äº‹ä»¶
+        CLocalNetMsg msg = new CLocalNetMsg();
+        msg.SetString("uid", player.uid);
+        CGameObserverMgr.SendMsg(CGameObserverConst.PlayerJoin, msg);
         dlgAllPlayerAdd?.Invoke(player);
     }
 
@@ -87,19 +232,46 @@ public class CPlayerMgr : CSingleMgrBase<CPlayerMgr>
         }
     }
 
-    public void RemovePlayerUnit(string uid)
+    public void RemovePlayerUnit(CPlayerUnit unit)
     {
-        CPlayerUnit pUnit = GetPlayerUnit(uid);
-        if(pUnit != null)
+        string szPrefabName = unit.pUnitData.szPrefabName;
+        if(unit.emCamp == EMUnitCamp.Blue)
         {
-            pUnit.Recycle();
-            GameObject.Destroy(pUnit.gameObject);
-            dicPlayerUnits.Remove(uid);
+            szPrefabName += CBattleMgr.Ins.pBlueCamp.szCampName;
+        }
+        else if(unit.emCamp == EMUnitCamp.Red)
+        {
+            szPrefabName += CBattleMgr.Ins.pRedCamp.szCampName;
+        }
+
+        if (dicPlayerAliveAvatar.ContainsKey(szPrefabName))
+        {
+            dicPlayerAliveAvatar[szPrefabName].Remove(unit);
+        }
+        else
+        {
+
+        }
+        unit.tranSelf.position = vUnitIdlePos.ToVector3();
+        unit.SetMapSlot(null);
+        unit.enabled = false;
+        unit.m_fixv3LogicPosition = vUnitIdlePos;
+        unit.ForceRefreshPos();
+
+        if (dicPlayerIdleAvatar.ContainsKey(szPrefabName))
+        {
+            dicPlayerIdleAvatar[szPrefabName].Add(unit);
+        }
+        else
+        {
+            List<CPlayerUnit> listUnits = new List<CPlayerUnit>();
+            listUnits.Add(unit);
+            dicPlayerIdleAvatar.Add(szPrefabName, listUnits);
         }
     }
 
     /// <summary>
-    /// »ñÈ¡Ö¸¶¨IDÍæ¼Ò
+    /// è·å–æŒ‡å®šIDç©å®¶
     /// </summary>
     /// <param name="guid"></param>
     /// <returns></returns>
@@ -112,6 +284,11 @@ public class CPlayerMgr : CSingleMgrBase<CPlayerMgr>
         }
 
         return pInfo;
+    }
+
+    public int GetAllBaseInfoCount()
+    {
+        return dicAllPlayers.Count;
     }
 
 }

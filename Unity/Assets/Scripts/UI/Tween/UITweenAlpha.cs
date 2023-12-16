@@ -37,7 +37,6 @@ public class UITweenAlpha : UITweenBase
         Init();
 
         base.Play(call);
-
         for(int i = 0;i < objTargets.Length;i++)
         {
             colorPlay = objTargets[i].color;
@@ -49,10 +48,10 @@ public class UITweenAlpha : UITweenBase
     protected override void Refresh(float lerp)
     {
         base.Refresh(lerp);
-
-        colorPlay.a = from * (1 - curValue) + to * curValue;
         for (int i = 0; i < objTargets.Length; i++)
         {
+            colorPlay = objTargets[i].color;
+            colorPlay.a = from * (1 - curValue) + to * curValue;
             objTargets[i].color = colorPlay;
         }
     }

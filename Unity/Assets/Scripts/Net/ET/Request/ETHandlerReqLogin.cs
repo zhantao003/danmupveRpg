@@ -5,7 +5,7 @@ using UnityEngine;
 
 public static class ETHandlerReqLogin
 {
-    public static async ETVoid Login(string userId, string nickName, string headIcon, int loginType)
+    public static async ETVoid Login(string userId, string nickName, string headIcon, long score, int loginType)
     {
         //Debug.Log("服务器IP地址：" + );
         //创建Realm session
@@ -51,7 +51,8 @@ public static class ETHandlerReqLogin
             Key = msgLoginRealm.Key,
             PlatformID = userId,
             NickName = nickName,
-            HeadIcon = headIcon
+            HeadIcon = headIcon,
+            Score = score,
         }) as G2C_LoginGate;
 
         //连接网关超时
@@ -80,10 +81,20 @@ public static class ETHandlerReqLogin
         user.szPlatformId = msgLoginGate.UserInfo.PlatformId;
         user.szNickName = msgLoginGate.UserInfo.NickName;
         user.szHeadIcon = msgLoginGate.UserInfo.Head;
+        user.nScore = msgLoginGate.UserInfo.Score;
         EUserInfoMgr.Ins.AddUser(user);
         EUserInfoMgr.Ins.pSelf = user;
 
         //调登录成功事件
         ETGame.EventSystem.Run(EventIdType.LoginFinish);
+
+        ETHeartBeat.Ins.bActive = true;
+
+        Refresh();
+    }
+
+    static void Refresh()
+    {
+        UIManager.Instance.OpenUI(UIResType.ETNetMatch);
     }
 }

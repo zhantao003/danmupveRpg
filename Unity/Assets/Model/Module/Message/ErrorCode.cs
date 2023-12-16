@@ -36,8 +36,8 @@ namespace ETModel
 		//-----------------------------------
 		// 小于这个Rpc会抛异常，大于这个异常的error需要自己判断处理，也就是说需要处理的错误应该要大于该值
 		public const int ERR_Exception = 200000;
-		
-		public const int C_AccountOrPasswordError = 2000001;    //账号密码错误
+
+        public const int C_AccountOrPasswordError = 2000001;    //账号密码错误
         public const int C_AccountAlreadyRegisted = 2000002;    //账号已被注册
         public const int C_UserNotOnline = 2000003;             //用户不在线
         public const int C_UserDataEmpty = 2000003;             //用户没有数据
@@ -47,6 +47,7 @@ namespace ETModel
         public const int C_RoomIsGaming = 2000008;              //房间在游戏种
         public const int C_RoomIsFull = 2000009;                //房间满员
         public const int C_AccountRegistFailed = 2000015;       //注册失败
+        public const int C_MatchGameFailed = 2000016;           //匹配游戏失败
 
         //-----------------------------------
         public static bool IsRpcNeedThrowException(int error)

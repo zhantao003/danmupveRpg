@@ -21,21 +21,34 @@ namespace ETModel
 
         static void RefreshUI()
         {
-            UIETMain uiMain = GameObject.FindObjectOfType<UIETMain>();
-            if (uiMain == null) return;
-            uiMain.objBoardLogin.SetActive(false);
-            uiMain.objBoardRoom.SetActive(true);
-
-            UIETBoardRoom uiETRoom = uiMain.objBoardRoom.GetComponent<UIETBoardRoom>();
-            for (int i = 0; i < ERoomInfoMgr.Ins.pSelfRoom.nMaxPlayer; i++)
+            UINetMatch match = UIManager.Instance.GetUI(UIResType.ETNetMatch) as UINetMatch;
+            if (match.IsOpen())
             {
-                ERoom.RoomSlot pSlot = ERoomInfoMgr.Ins.pSelfRoom.GetPlayerBySeat(i);
-                if (pSlot == null) continue;
+                for (int i = 0; i < ERoomInfoMgr.Ins.pSelfRoom.nMaxPlayer; i++)
+                {
+                    ERoom.RoomSlot pRoomSlot = ERoomInfoMgr.Ins.pSelfRoom.GetPlayerByIdx(i);
+                    if (pRoomSlot == null) continue;
 
-                uiETRoom.SetSlotInfo(pSlot);
+                    //记录自己的所属阵营
+                    if (pRoomSlot.userId == EUserInfoMgr.Ins.pSelf.nUserId)
+                    {
+                        if(pRoomSlot.nSeatIdx == 0) //左边
+                        {
+                            EUserInfoMgr.Ins.emSelfCamp = EMUnitCamp.Red;
+                        }
+                        else if(pRoomSlot.nSeatIdx == 1)
+                        {
+                            EUserInfoMgr.Ins.emSelfCamp = EMUnitCamp.Blue;
+                        }
+                        
+                        continue;
+                    }
+
+                    match.MatchSetEnemyInfo(pRoomSlot.player);
+                }
+
+                match.StartCoroutine(match.OnStartGame());
             }
-
-            uiETRoom.CheckGameStart();
         }
     }
 }

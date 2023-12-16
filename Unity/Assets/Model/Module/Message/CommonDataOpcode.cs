@@ -8,6 +8,10 @@ namespace ETModel
 	[Message(CommonDataOpcode.DUserSimpleInfo)]
 	public partial class DUserSimpleInfo {}
 
+// 缩略信息
+	[Message(CommonDataOpcode.DUserListInfo)]
+	public partial class DUserListInfo {}
+
 	[Message(CommonDataOpcode.DPlayerInfo)]
 	public partial class DPlayerInfo {}
 
@@ -38,6 +42,9 @@ namespace ETModel
 	[Message(CommonDataOpcode.DVec4)]
 	public partial class DVec4 {}
 
+	[Message(CommonDataOpcode.DLockStepFrameEvent)]
+	public partial class DLockStepFrameEvent {}
+
 }
 namespace ETModel
 {
@@ -45,15 +52,17 @@ namespace ETModel
 	{
 		 public const ushort DUserInfo = 10001;
 		 public const ushort DUserSimpleInfo = 10002;
-		 public const ushort DPlayerInfo = 10003;
-		 public const ushort DRoomConfig = 10004;
-		 public const ushort DRoomSeatInfo = 10005;
-		 public const ushort DRoomInfo = 10006;
-		 public const ushort DRoomSimpleInfo = 10007;
-		 public const ushort DPackIconInfo = 10008;
-		 public const ushort DGameUnit = 10009;
-		 public const ushort DFindPlayer = 10010;
-		 public const ushort DVec3 = 10011;
-		 public const ushort DVec4 = 10012;
+		 public const ushort DUserListInfo = 10003;
+		 public const ushort DPlayerInfo = 10004;
+		 public const ushort DRoomConfig = 10005;
+		 public const ushort DRoomSeatInfo = 10006;
+		 public const ushort DRoomInfo = 10007;
+		 public const ushort DRoomSimpleInfo = 10008;
+		 public const ushort DPackIconInfo = 10009;
+		 public const ushort DGameUnit = 10010;
+		 public const ushort DFindPlayer = 10011;
+		 public const ushort DVec3 = 10012;
+		 public const ushort DVec4 = 10013;
+		 public const ushort DLockStepFrameEvent = 10014;
 	}
 }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bee88ec70536c44fbd80b27486e2037, type: 3}
   m_Name: DanmuDouyinOpenConfig
   m_EditorClassIdentifier: 
-  szAppId: tta852deef376d66de10
-  szSecret: 5a0c9a836693dd0b105163d76a89ddd4e24d4364
+  szAppId: tt64d91264fbe56b9f10
+  szSecret: 46a9148ef8b0000ced6a5ea1129606343cbc5ce5
   szDevID: 666666

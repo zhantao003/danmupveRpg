@@ -11,4 +11,8 @@ public class EUserInfo
     public string szNickName;
 
     public string szHeadIcon;
+
+    public string szRoomId;
+
+    public long nScore;
 }

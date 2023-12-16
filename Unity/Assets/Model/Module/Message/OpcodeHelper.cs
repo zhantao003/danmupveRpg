@@ -8,7 +8,8 @@ namespace ETModel
 		{
 			OuterOpcode.C2R_Ping,
 			OuterOpcode.R2C_Ping,
-		};
+            OuterOpcode.Actor_LockStepFrame_M2C,
+        };
 
 		public static bool IsNeedDebugLogMessage(ushort opcode)
 		{

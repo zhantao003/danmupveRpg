@@ -28,6 +28,8 @@ public class CSceneFactory {
 
         //游戏场景
         GameMap101 = 101,         
+        GameModeSelect102 = 102,
+        GameMap101Net = 103,
 
         Max,
     }
@@ -45,6 +47,8 @@ public class CSceneFactory {
     {
         dicScenes.Add((int)EMSceneType.MainMenu, new CSceneInfo() { szName = "MainMenu", pScene = new CSceneMainMenu() });
         dicScenes.Add((int)EMSceneType.GameMap101, new CSceneInfo() { szName = "Game101", pScene = new CSceneGame() });
+        dicScenes.Add((int)EMSceneType.GameMap101Net, new CSceneInfo() { szName = "Game101Net", pScene = new CSceneNetGame() });
+        dicScenes.Add((int)EMSceneType.GameModeSelect102, new CSceneInfo() { szName = "ModeSelect102", pScene = new CSceneGameModeSelect() });
     }
 
     /// <summary>

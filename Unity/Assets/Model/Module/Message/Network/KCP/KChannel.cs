@@ -268,8 +268,8 @@ namespace ETModel
 				return;
 			}
 
-            // 超时断开连接
-            //if (timeNow - this.lastRecvTime > 30 * 1000)
+            //// 超时断开连接
+            //if (timeNow - this.lastRecvTime > 60 * 1000)
             //{
             //    this.OnError(ErrorCode.ERR_KcpChannelTimeout);
             //    return;

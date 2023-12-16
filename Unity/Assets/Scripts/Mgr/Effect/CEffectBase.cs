@@ -30,7 +30,7 @@ public class CEffectBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Init();
+        //Init();
     }
 
     void Update()
@@ -50,7 +50,8 @@ public class CEffectBase : MonoBehaviour
         }
     }
 
-    public virtual void Init()
+    [ContextMenu("Init")]
+    public virtual void Init(bool play = true)
     {
         enabled = true;
 
@@ -98,7 +99,10 @@ public class CEffectBase : MonoBehaviour
             bInited = true;
         }
 
-        Play();
+        if(play)
+        {
+            Play();
+        }
     }
 
     public virtual void Recycle()

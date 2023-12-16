@@ -7,7 +7,7 @@ public static class HexMetrics
     /// <summary>
     /// 外径，中心到顶点距离
     /// </summary>
-    public const float outerRadius = 0.45f;// 0.35f;
+    public const float outerRadius = 1f;// 0.45f;// 0.35f;
 
     /// <summary>
     /// 内径，中心到边距离，0.866025404为二分之根号三的近似值
@@ -28,7 +28,7 @@ public static class HexMetrics
         new Vector3(0f,           outerRadius,          0f),//为了代码结构清晰加的 index=6
      };
 
-    public static Vector3 GetPosFromHexGrid(int x, int y)
+    public static FixVector3 GetPosFromHexGrid(int x, int y)
     {
         bool odd = ((y & 1) != 0);
         // 得到格子左下角坐标:
@@ -40,7 +40,7 @@ public static class HexMetrics
             OGX += innerRadius;
         }
         // 偏移转到格子中心位置:
-        Vector3 pos = new Vector3(OGX + innerRadius, OGY + outerRadius);// new Vector3(OGX + innerRadius, DefaultHigh, OGY + outerRadius);
+        FixVector3 pos = UtilGeometry.CreateVector3(OGX + innerRadius, OGY + outerRadius);// new Vector3(OGX + innerRadius, DefaultHigh, OGY + outerRadius);
         return pos;
     }
 

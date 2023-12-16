@@ -15,7 +15,7 @@ public class CTimeMgr {
         set
         {
             fTimeScale = value;
-            //Time.timeScale = value;
+            Time.timeScale = value;
         }
     }
 
